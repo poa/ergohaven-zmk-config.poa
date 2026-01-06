@@ -11,7 +11,7 @@
         u_mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <U_TAPPING_TERM>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -19,7 +19,7 @@
         u_lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <U_TAPPING_TERM>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -39,7 +39,8 @@
                     30 31 32 33 34 35
                  43 44 45 46 47 48 49
                  55 57 58 59
-                >;
+            >;
+
             hold-trigger-on-release;
         };
 
@@ -58,8 +59,8 @@
                 24 25 26 27 28 29
                 36 37 38 39 40 41 42
                       50 51 52 58 54
+            >;
 
-                >;
             hold-trigger-on-release;
         };
 
@@ -166,7 +167,6 @@
             wait-ms = <0>;
             tap-ms = <30>;
         };
-
     };
 
     keymap {
@@ -174,11 +174,11 @@
 
         Base {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                  &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                   &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A   &kp S     &kp D     &kp F      &kp G                                   &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &kp LGUI  &kp LALT  &kp LCTRL  &mo 4   &kp SPACE     &kp ENTER         &mo 2   &kp RCTRL  &kp RALT   &kp RGUI
+&kp GRAVE  &kp N1             &kp N2             &kp N3          &kp N4          &kp N5                                         &kp N6  &kp N7          &kp N8          &kp N9         &kp N0            &kp BSPC
+&kp TAB    &kp Q              &kp W              &kp E           &kp R           &kp T                                          &kp Y   &kp U           &kp I           &kp O          &kp P             &kp BSLH
+&kp ESC    &u_mtl LEFT_GUI A  &u_mtl LEFT_ALT S  &u_mtl LCTRL D  &u_mtl LSHFT F  &kp G                                          &kp H   &u_mtr RSHFT J  &u_mtr RCTRL K  &u_mtr RALT L  &u_mtr RGUI SEMI  &kp SQT
+&kp LSHFT  &kp Z              &kp X              &kp C           &kp V           &kp B          &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M           &kp COMMA       &kp DOT        &kp FSLH          &kp RSHFT
+                              &kp LGUI           &kp LALT        &kp LCTRL       &u_lt 4 SPACE  &kp SPACE     &kp ENTER         &mo 2   &kp RCTRL       &kp RALT        &kp RGUI
             >;
 
             display-name = "Base";
@@ -235,11 +235,11 @@
 
         Nav {
             bindings = <
-&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                     &kp F7           &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                    &kp PG_UP        &kp N7  &kp N8  &kp N9   &trans   &trans
-&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                    &kp PG_DN        &kp N4  &kp N5  &kp N6   &trans   &trans
-&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans  &kp PRINTSCREEN  &kp N1  &kp N2  &kp N3   &trans   &trans
-                &trans        &trans    &trans         &trans   &trans    &trans  &mo 5            &trans  &kp N0  &trans
+&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                           &kp F7           &kp F8     &kp F9      &kp F10    &kp F11          &kp F12
+&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                          &kp KP_MINUS     &kp KP_N7  &kp KP_N8   &kp KP_N9  &kp KP_DIVIDE    &trans
+&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                          &kp KP_PLUS      &kp KP_N4  &kp KP_N5   &kp KP_N6  &kp KP_MULTIPLY  &trans
+&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans        &kp PRINTSCREEN  &kp KP_N1  &kp KP_N2   &kp KP_N3  &trans           &trans
+                &trans        &trans    &trans         &trans   &trans    &kp KP_ENTER  &mo 5            &kp KP_N0  &kp KP_DOT  &trans
             >;
 
             display-name = "Nav";
