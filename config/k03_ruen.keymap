@@ -62,25 +62,16 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
 
-        u_osm_lt: u_osm_lt {
+        u_ltsk: layer_tap_sticky_key {
+            label = "u_ltsk";
             compatible = "zmk,behavior-hold-tap";
-            label = "U_OSM_LT";
-            bindings = <&lt>, <&sk>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            bindings = <&mo>, <&u_skq>;
+
+            flavor = "tap-preferred";
         };
 
-        u_osm_mt: u_osm_mt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "U_OSM_MT";
-            bindings = <&mt>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
     };
 
     combos {
@@ -232,7 +223,7 @@
 &kp TAB          &kp Q              &kp W              &kp E           &kp R               &kp T                                             &kp Y          &kp U           &kp I              &kp O          &kp P             &kp BACKSPACE
 &u_mt LCTRL ESC  &u_mtl LEFT_GUI A  &u_mtl LEFT_ALT S  &u_mtl LSHFT D  &u_mtl LCTRL F      &kp G                                             &kp H          &u_mtr RCTRL J  &u_mtr RSHFT K     &u_mtr RALT L  &u_mtr RGUI SEMI  &kp ENTER
 &kp LSHFT        &kp Z              &kp X              &kp C           &kp V               &kp B          &kp C_MUTE       &kp C_PLAY_PAUSE  &kp N          &kp M           &kp COMMA          &kp DOT        &kp FSLH          &kp RSHFT
-                                    &kp LGUI           &kp LALT        &u_osm_lt 5 LSHIFT  &u_lt 4 SPACE  &u_lt 5 SPACE    &key_repeat       &u_lt 2 ENTER  &kp RALT        &u_mt RGUI C_MENU  &kp RCTRL
+                                    &kp LGUI           &kp LALT        &u_lt 5 LSHIFT  &u_lt 4 SPACE  &u_lt 5 SPACE    &key_repeat       &u_lt 2 ENTER  &kp RALT        &u_mt RGUI C_MENU  &kp RCTRL
             >;
 
             display-name = "Base";
@@ -268,7 +259,7 @@
             bindings = <
 &trans     &trans     &trans    &trans     &trans            &trans                       &trans     &trans                 &trans                 &trans               &trans               &trans
 &kp TILDE  &kp GRAVE  &kp LT    &kp SEMI   &kp LEFT_BRACKET  &kp PRCNT                    &kp CARET  &kp RIGHT_BRACKET      &kp COLON              &kp GT               &kp SQT              &trans
-&trans     &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR        &kp MINUS                    &kp PLUS   &u_osm_mt RCTRL RCTRL  &u_osm_mt RSHFT RSHFT  &u_osm_mt RALT RALT  &u_osm_mt RGUI RGUI  &kp DQT
+&trans     &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR        &kp MINUS                    &kp PLUS   &sk RCTRL &sk RSHFT  &sk RALT  &sk RGUI  &kp DQT
 &trans     &kp PIPE   &kp AMPS  &kp ASTRK  &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH               &kp COMMA              &kp DOT              &kp QMARK            &trans
                       &trans    &trans     &trans            &trans     &trans    &trans  &none      &trans                 &trans                 &trans
             >;
@@ -281,7 +272,7 @@
             bindings = <
 &trans         &trans     &trans    &trans       &trans            &trans                       &trans     &trans                 &trans                 &trans               &trans               &trans
 &en TILDE      &en GRAVE  &en LT    &kp RU_SEMI  &en LEFT_BRACKET  &kp PRCNT                    &en CARET  &en RIGHT_BRACKET      &kp RU_COLON           &en GT               &en SQT              &trans
-&kp RU_NUMERO  &kp EXCL   &en AT    &en HASH     &en DOLLAR        &kp MINUS                    &kp PLUS   &u_osm_mt RCTRL RCTRL  &u_osm_mt RSHFT RSHFT  &u_osm_mt RALT RALT  &u_osm_mt RGUI RGUI  &kp RU_DQT
+&kp RU_NUMERO  &kp EXCL   &en AT    &en HASH     &en DOLLAR        &kp MINUS                    &kp PLUS   &u_osm_mt RCTRL RCTRL  &sk RSHFT  &sk RALT  &sk RGUI  &kp RU_DQT
 &trans         &kp PIPE   &en AMPS  &kp ASTRK    &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH               &kp RU_COMMA           &kp RU_DOT           &kp RU_QMARK         &trans
                           &trans    &trans       &trans            &trans     &trans    &trans  &none      &trans                 &trans                 &trans
             >;
