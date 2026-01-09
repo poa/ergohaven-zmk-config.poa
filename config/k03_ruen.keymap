@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     macros {
@@ -83,11 +84,9 @@
             #binding-cells = <1>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <
-                &macro_release
-                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
-                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
-            >;
+            bindings =
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
         m_press_key_twice: m_press_key_twice {
@@ -95,14 +94,12 @@
             #binding-cells = <1>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <
-                &macro_press
-                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
-                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
-                &macro_pause_for_release
-                &macro_tap
-                    &m_release_key_twice MACRO_PLACEHOLDER
-            >;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_tap>,
+                <&m_release_key_twice MACRO_PLACEHOLDER>;
         };
 
         m_hold_mod_press_key: m_hold_mod_press_key {
@@ -110,12 +107,11 @@
             #binding-cells = <2>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <
-                &macro_press
-                    &macro_param_1to1 &kp 0
-                &macro_tap
-                    &macro_param_2to1 &kp 0
-            >;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&macro_param_2to1 &kp MACRO_PLACEHOLDER>;
         };
 
         m_la: m_la {
@@ -123,19 +119,14 @@
             #binding-cells = <1>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <
-                &macro_tap
-                    &kp 0 // do nothing, fire all sticky keys
-                &macro_press
-                    &macro_param_1to1 &mo MACRO_PLACEHOLDER
-                &macro_pause_for_release
-                &macro_release
-                    &macro_param_1to1 &mo MACRO_PLACEHOLDER
-                    &kp LSHFT
-                    &kp LCTRL
-                    &kp LALT
-                    &kp LGUI
-            >;
+            bindings =
+                <&macro_tap>,
+                <&kp 0>,
+                <&macro_press>,
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER &kp LSHFT &kp LCTRL &kp LALT &kp LGUI>;
         };
     };
 
@@ -162,9 +153,7 @@
             ignore-modifiers;
         };
 
-        &sk {
-                release-after-ms = <60000>;
-        };
+        &sk { release-after-ms = <60000>; };
 
         u_skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -174,7 +163,6 @@
             quick-release;
             ignore-modifiers;
         };
-
 
         u_mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -198,6 +186,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             bindings = <&mo>, <&u_skq>;
+
             flavor = "tap-preferred";
         };
 
@@ -227,38 +216,41 @@
             hold-trigger-on-release;
         };
 
-        cm_lgui: cm_lgui { 
-            compatible = "zmk,behavior-mod-morph"; 
-            #binding-cells = <0>; 
-            bindings = <&sticky_forever LGUI>, <&m_release_key_twice LGUI>; 
-            mods = <(MOD_LGUI)>; 
-            keep-mods = <(MOD_LGUI)>; 
+        cm_lgui: cm_lgui {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sticky_forever LGUI>, <&m_release_key_twice LGUI>;
+
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
 
-        cm_lalt: cm_lalt { 
-            compatible = "zmk,behavior-mod-morph"; 
-            #binding-cells = <0>; 
-            bindings = <&sticky_forever LALT>, <&m_release_key_twice LALT>; 
-            mods = <(MOD_LALT)>; 
-            keep-mods = <(MOD_LALT)>; 
+        cm_lalt: cm_lalt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sticky_forever LALT>, <&m_release_key_twice LALT>;
+
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
-        cm_lctrl: cm_lctrl { 
-            compatible = "zmk,behavior-mod-morph"; 
-            #binding-cells = <0>; 
-            bindings = <&sticky_forever LCTRL>, <&m_release_key_twice LCTRL>; 
-            mods = <(MOD_LCTL)>; 
-            keep-mods = <(MOD_LCTL)>; 
+        cm_lctrl: cm_lctrl {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sticky_forever LCTRL>, <&m_release_key_twice LCTRL>;
+
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
 
-        cm_lshft: cm_lshft { 
-            compatible = "zmk,behavior-mod-morph"; 
-            #binding-cells = <0>; 
-            bindings = <&sticky_forever LSHFT>, <&m_release_key_twice LSHFT>; 
-            mods = <(MOD_LSFT)>; 
-            keep-mods = <(MOD_LSFT)>; 
-        };
+        cm_lshft: cm_lshft {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sticky_forever LSHFT>, <&m_release_key_twice LSHFT>;
 
+            mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -318,12 +310,12 @@
 
         Media {
             if-layers = <2 4>;
-            then-layer = <6>;
+            then-layer = <8>;
         };
 
         MediaRu {
-            if-layers = <4 4>;
-            then-layer = <6>;
+            if-layers = <3 4>;
+            then-layer = <8>;
         };
     };
 
@@ -332,11 +324,11 @@
 
         Base {
             bindings = <
-&kp GRAVE        &kp N1             &kp N2             &kp N3          &kp N4              &kp N5                                            &kp N6         &kp N7          &kp N8             &kp N9         &kp N0            &kp BSPC
-&kp TAB          &kp Q              &kp W              &kp E           &kp R               &kp T                                             &kp Y          &kp U           &kp I              &kp O          &kp P             &kp BACKSPACE
-&u_mt LCTRL ESC  &u_mtl LEFT_GUI A  &u_mtl LEFT_ALT S  &u_mtl LSHFT D  &u_mtl LCTRL F      &kp G                                             &kp H          &u_mtr RCTRL J  &u_mtr RSHFT K     &u_mtr RALT L  &u_mtr RGUI SEMI  &kp ENTER
-&kp LSHFT        &kp Z              &kp X              &kp C           &kp V               &kp B          &kp C_MUTE       &kp C_PLAY_PAUSE  &kp N          &kp M           &kp COMMA          &kp DOT        &kp FSLH          &kp RSHFT
-                                    &kp LGUI           &kp LALT        &u_ltsk 5 LSHIFT  &m_la 4 SPACE  &u_lt 5 SPACE    &key_repeat       &m_la 2 ENTER  &kp RALT        &u_mt RGUI C_MENU  &kp RCTRL
+&kp GRAVE        &kp N1  &kp N2    &kp N3    &kp N4   &kp N5                                            &kp N6           &kp N7   &kp N8     &kp N9            &kp N0    &kp BSPC
+&kp TAB          &kp Q   &kp W     &kp E     &kp R    &kp T                                             &kp Y            &kp U    &kp I      &kp O             &kp P     &kp BACKSPACE
+&u_mt LCTRL ESC  &kp A   &kp S     &kp D     &kp F    &kp G                                             &kp H            &kp J    &kp K      &kp L             &kp SEMI  &kp ENTER
+&sk LSHFT        &kp Z   &kp X     &kp C     &kp V    &kp B          &kp C_MUTE       &kp C_PLAY_PAUSE  &kp N            &kp M    &kp COMMA  &kp DOT           &kp FSLH  &kp RSHFT
+                         &sk LGUI  &sk LALT  &m_la 4  &u_lt 5 SPACE  &u_lt 7 SPACE    &key_repeat       &u_ltsk 6 RSHFT  &m_la 2  &sk RCTRL  &u_mt RGUI K_APP
             >;
 
             display-name = "Base";
@@ -352,11 +344,11 @@
         BaseRu {
             display-name = "BaseRu";
             bindings = <
-&kp GRAVE  &kp N1                          &kp N2                            &kp N3                        &kp N4                      &kp N5                                &kp N6              &kp N7                      &kp N8                       &kp N9                      &kp N0                       &trans
-&trans     &kp RU_CYRILLIC_SHORT_I         &kp RU_CYRILLIC_TSE               &kp RU_CYRILLIC_U             &kp RU_CYRILLIC_KA          &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE         &kp RU_CYRILLIC_SHA          &kp RU_CYRILLIC_SHCHA       &kp RU_CYRILLIC_ZE           &trans
-&trans     &u_mtl LEFT_GUI RU_CYRILLIC_EF  &u_mtl LEFT_ALT RU_CYRILLIC_YERU  &u_mtl LSHIFT RU_CYRILLIC_VE  &u_mtl LCTRL RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &u_mtr RSHFT RU_CYRILLIC_O  &u_mtr RSHFT RU_CYRILLIC_EL  &u_mtr RALT RU_CYRILLIC_DE  &u_mtr RGUI RU_CYRILLIC_ZHE  &trans
-&trans     &kp RU_CYRILLIC_YA              &kp RU_CYRILLIC_CHE               &kp RU_CYRILLIC_ES            &kp RU_CYRILLIC_EM          &kp RU_CYRILLIC_I   &trans    &trans  &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN   &kp RU_CYRILLIC_BE           &kp RU_CYRILLIC_YU          &kp RU_DOT                   &trans
-                                           &trans                            &trans                        &trans                      &trans              &trans    &trans  &u_lt 3 ENTER       &trans                      &trans                       &trans
+&kp GRAVE  &kp N1                   &kp N2                &kp N3              &kp N4              &kp N5                                &kp N6              &kp N7                     &kp N8               &kp N9                 &kp N0               &trans
+&trans     &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
+&trans     &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &trans
+&trans     &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &trans    &trans  &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_DOT           &trans
+                                    &trans                &trans              &trans              &trans              &trans    &trans  &trans              &m_la 3                    &trans               &trans
             >;
 
             sensor-bindings =
@@ -370,11 +362,11 @@
 
         Sym {
             bindings = <
-&trans     &trans     &trans    &trans     &trans            &trans                       &trans     &trans                 &trans                 &trans               &trans               &trans
-&kp TILDE  &kp GRAVE  &kp LT    &kp SEMI   &kp LEFT_BRACKET  &kp PRCNT                    &kp CARET  &kp RIGHT_BRACKET      &kp COLON              &kp GT               &kp SQT              &trans
-&trans     &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR        &kp MINUS                    &kp PLUS   &cm_lctrl  &cm_lshft  &cm_lalt  &cm_lgui  &kp DQT
-&trans     &kp PIPE   &kp AMPS  &kp ASTRK  &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH               &kp COMMA              &kp DOT              &kp QMARK            &trans
-                      &trans    &trans     &trans            &trans     &trans    &trans  &none      &trans                 &trans                 &trans
+&trans     &trans     &trans    &trans     &trans            &trans                       &trans     &trans             &trans     &trans    &trans     &trans
+&kp TILDE  &kp GRAVE  &kp LT    &kp SEMI   &kp LEFT_BRACKET  &kp PRCNT                    &kp CARET  &kp RIGHT_BRACKET  &kp COLON  &kp GT    &kp SQT    &trans
+&trans     &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR        &kp MINUS                    &kp PLUS   &cm_lctrl          &cm_lshft  &cm_lalt  &cm_lgui   &kp DQT
+&trans     &kp PIPE   &kp AMPS  &kp ASTRK  &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH           &kp COMMA  &kp DOT   &kp QMARK  &trans
+                      &trans    &trans     &trans            &trans     &trans    &trans  &trans     &none              &trans     &trans
             >;
 
             display-name = "Sym";
@@ -383,24 +375,37 @@
         SymRu {
             display-name = "SymRu";
             bindings = <
-&trans         &trans     &trans    &trans       &trans            &trans                       &trans     &trans                 &trans                 &trans               &trans               &trans
-&en TILDE      &en GRAVE  &en LT    &kp RU_SEMI  &en LEFT_BRACKET  &kp PRCNT                    &en CARET  &en RIGHT_BRACKET      &kp RU_COLON           &en GT               &en SQT              &trans
-&kp RU_NUMERO  &kp EXCL   &en AT    &en HASH     &en DOLLAR        &kp MINUS                    &kp PLUS   &cm_lctrl &cm_lshft  &cm_lalt &cm_lgui  &kp RU_DQT
-&trans         &kp PIPE   &en AMPS  &kp ASTRK    &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH               &kp RU_COMMA           &kp RU_DOT           &kp RU_QMARK         &trans
-                          &trans    &trans       &trans            &trans     &trans    &trans  &none      &trans                 &trans                 &trans
+&trans         &trans     &trans    &trans       &trans            &trans                       &trans     &trans             &trans        &trans      &trans        &trans
+&en TILDE      &en GRAVE  &en LT    &kp RU_SEMI  &en LEFT_BRACKET  &kp PRCNT                    &en CARET  &en RIGHT_BRACKET  &kp RU_COLON  &en GT      &en SQT       &trans
+&kp RU_NUMERO  &kp EXCL   &en AT    &en HASH     &en DOLLAR        &kp MINUS                    &kp PLUS   &trans             &trans        &trans      &trans        &kp RU_DQT
+&trans         &kp PIPE   &en AMPS  &kp ASTRK    &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH           &kp RU_COMMA  &kp RU_DOT  &kp RU_QMARK  &trans
+                          &trans    &trans       &trans            &trans     &trans    &trans  &trans     &none              &trans        &trans
             >;
         };
 
         Nav {
             bindings = <
-&kp F1  &kp F2                   &kp F3               &kp F4                  &kp F5                 &kp F6                         &kp F7         &kp F8    &kp F9     &kp F10          &kp F11          &kp F12
-&trans  &kp LA(TAB)              &kp LC(LEFT)         &none                   &kp LC(RIGHT)          &kp LC(TAB)                    &kp INS        &kp HOME  &kp PG_UP  &caps_word       &kp PAUSE_BREAK  &trans
-&trans  &cm_lgui  &cm_lalt  &cm_lshft  &cm_lctrl  &kp ENTER                      &kp LEFT       &kp DOWN  &kp UP     &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp ENTER
-&trans  &kp LC(Z)                &kp LC(X)            &kp LC(C)               &kp LC(V)              &kp LC(B)    &trans    &trans  &kp DEL        &kp END   &kp PG_DN  &kp CAPS         &kp SCROLLLOCK   &trans
-                                 &trans               &trans                  &trans                 &none        &trans    &trans  &u_lt 2 ENTER  &trans    &trans     &trans
+&kp F1  &kp F2       &kp F3        &kp F4     &kp F5         &kp F6                         &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
+&trans  &kp LA(TAB)  &kp LC(LEFT)  &none      &kp LC(RIGHT)  &kp LC(TAB)                    &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
+&trans  &cm_lgui     &cm_lalt      &cm_lshft  &cm_lctrl      &kp ENTER                      &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp ENTER
+&trans  &kp LC(Z)    &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(B)    &trans    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
+                     &trans        &trans     &none          &trans       &trans    &trans  &trans      &mo 2     &trans    &trans
             >;
 
             display-name = "Nav";
+        };
+
+        Mouse {
+            display-name = "Nav";
+            bindings = <
+&kp F1  &kp F2       &kp F3        &kp F4     &kp F5         &kp F6                            &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
+&trans  &kp LA(TAB)  &kp LC(LEFT)  &none      &kp LC(RIGHT)  &kp LC(TAB)                       &none           &none           &none         &none            &none    &trans
+&trans  &cm_lgui     &cm_lalt      &cm_lshft  &cm_lctrl      &kp ENTER                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp ENTER
+&trans  &kp LC(Z)    &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(B)    &trans    &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    &trans
+                     &trans        &trans     &trans         &trans       &none     &mkp LCLK  &mkp RCLK       &mkp MCLK       &mkp MB4      &mkp MB5
+            >;
+
+            label = "Mouse";
         };
 
         Num {
@@ -410,8 +415,23 @@
 &trans  &trans  &trans  &trans  &trans  &trans                    &kp KP_MULTIPLY  &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp KP_PLUS     &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &kp KP_DIVIDE    &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp KP_MINUS    &kp KP_ENTER
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_N0        &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp KP_NUMLOCK  &trans
-                &trans  &trans  &none   &trans  &trans    &trans  &trans           &kp KP_DOT  &trans     &trans
+                &trans  &trans  &trans  &trans  &none     &trans  &trans           &kp KP_DOT  &trans     &trans
             >;
+
+            label = "Num";
+        };
+
+        Func {
+            display-name = "Nav";
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7   &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp F12  &kp F7  &kp F8  &kp F9   &kp F15  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp F11  &kp F4  &kp F5  &kp F6   &kp F14  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F10  &kp F1  &kp F2  &kp F3   &kp F13  &trans
+                &trans  &trans  &trans  &trans  &none     &trans  &trans   &trans  &trans  &trans
+            >;
+
+            label = "Func";
         };
 
         Media {
