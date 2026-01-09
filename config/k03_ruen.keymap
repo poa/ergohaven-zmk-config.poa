@@ -154,6 +154,7 @@
             #binding-cells = <1>;
             bindings = <&m_press_key_twice>;
             release-after-ms = <600000>;
+            quick-release;
             ignore-modifiers;
         };
 
