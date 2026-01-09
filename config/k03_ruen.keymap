@@ -5,136 +5,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
-        u_mt: mod_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        u_lt: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-
-        u_mtl: mod_tap_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 43 44 45 46 47 48 49 55 57 58 59 56>;
-            hold-trigger-on-release;
-        };
-
-        u_mtr: mod_tap_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 54 53>;
-            hold-trigger-on-release;
-        };
-
-        enc_vol: enc_vol {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENC_VOL";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
-        };
-
-        enc_prevnext: enc_prevnext {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENC_PREVNEXT";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp C_NEXT>, <&kp C_PREV>;
-        };
-
-        u_osm_lt: u_osm_lt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "U_OSM_LT";
-            bindings = <&lt>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        u_osm_mt: u_osm_mt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "U_OSM_MT";
-            bindings = <&mt>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        cmben {
-            bindings = <&layer_en>;
-            key-positions = <15 14>;
-            layers = <1 0>;
-        };
-
-        cmbru {
-            bindings = <&layer_ru>;
-            key-positions = <15 16>;
-            layers = <0 1>;
-        };
-
-        ru_cyr_yo {
-            bindings = <&kp GRAVE>;
-            key-positions = <13 14>;
-            layers = <1>;
-        };
-
-        ru_cyr_hsgn {
-            bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
-            key-positions = <45 46>;
-            layers = <1>;
-        };
-
-        ru_cyr_ha {
-            bindings = <&kp RU_CYRILLIC_HA>;
-            key-positions = <21 22>;
-            layers = <1>;
-        };
-
-        ru_cyr_e {
-            bindings = <&kp RU_CYRILLIC_E>;
-            key-positions = <34 33>;
-            layers = <1>;
-        };
-
-        lpar {
-            bindings = <&kp LPAR>;
-            key-positions = <26 27>;
-            layers = <2 3>;
-        };
-
-        rpar {
-            bindings = <&kp RPAR>;
-            key-positions = <27 28>;
-            layers = <2 3>;
-        };
-    };
-
     macros {
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
@@ -207,6 +77,249 @@
             wait-ms = <0>;
             tap-ms = <30>;
         };
+
+        m_release_key_twice: m_release_key_twice {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <
+                &macro_release
+                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
+                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
+            >;
+        };
+
+        m_press_key_twice: m_press_key_twice {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <
+                &macro_press
+                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
+                    &macro_param_1to1 &kp MACRO_PLACEHOLDER
+                &macro_pause_for_release
+                &macro_tap
+                    &m_release_key_twice MACRO_PLACEHOLDER
+            >;
+        };
+
+        m_hold_mod_press_key: m_hold_mod_press_key {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <
+                &macro_press
+                    &macro_param_1to1 &kp 0
+                &macro_tap
+                    &macro_param_2to1 &kp 0
+            >;
+        };
+
+        m_la: m_la {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <
+                &macro_tap
+                    &kp 0 // do nothing, fire all sticky keys
+                &macro_press
+                    &macro_param_1to1 &mo MACRO_PLACEHOLDER
+                &macro_pause_for_release
+                &macro_release
+                    &macro_param_1to1 &mo MACRO_PLACEHOLDER
+                    &kp LSHFT
+                    &kp LCTRL
+                    &kp LALT
+                    &kp LGUI
+            >;
+        };
+    };
+
+    behaviors {
+        enc_vol: enc_vol {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENC_VOL";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+        };
+
+        enc_prevnext: enc_prevnext {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENC_PREVNEXT";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_NEXT>, <&kp C_PREV>;
+        };
+
+
+        u_mt: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        u_lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
+        u_ltsk: u_ltsk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "u_ltsk";
+            bindings = <&mo>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        u_ltsk: layer_tap_sticky_key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&u_skq>;
+        };
+
+        u_mtl: mod_tap_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 43 44 45 46 47 48 49 55 57 58 59 56>;
+            hold-trigger-on-release;
+        };
+
+        u_mtr: mod_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 54 53>;
+            hold-trigger-on-release;
+        };
+
+        sticky_forever: sticky_forever {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&m_press_key_twice>;
+            release-after-ms = <600000>;
+            ignore-modifiers;
+        };
+
+        &sk {
+                release-after-ms = <60000>;
+        };
+
+        u_skq: sticky_key_quick_release {
+                compatible = "zmk,behavior-sticky-key";
+                #binding-cells = <1>;
+                bindings = <&kp>;
+                release-after-ms = <3000>;
+                quick-release;
+                ignore-modifiers;
+            };
+
+        cm_lgui: cm_lgui { 
+            compatible = "zmk,behavior-mod-morph"; 
+            #binding-cells = <0>; 
+            bindings = <&sticky_forever LGUI>, <&m_release_key_twice LGUI>; 
+            mods = <(MOD_LGUI)>; 
+            keep-mods = <(MOD_LGUI)>; 
+        };
+
+        cm_lalt: cm_lalt { 
+            compatible = "zmk,behavior-mod-morph"; 
+            #binding-cells = <0>; 
+            bindings = <&sticky_forever LALT>, <&m_release_key_twice LALT>; 
+            mods = <(MOD_LALT)>; 
+            keep-mods = <(MOD_LALT)>; 
+        };
+
+        cm_lctrl: cm_lctrl { 
+            compatible = "zmk,behavior-mod-morph"; 
+            #binding-cells = <0>; 
+            bindings = <&sticky_forever LCTRL>, <&m_release_key_twice LCTRL>; 
+            mods = <(MOD_LCTL)>; 
+            keep-mods = <(MOD_LCTL)>; 
+        };
+
+        cm_lshft: cm_lshft { 
+            compatible = "zmk,behavior-mod-morph"; 
+            #binding-cells = <0>; 
+            bindings = <&sticky_forever LSHFT>, <&m_release_key_twice LSHFT>; 
+            mods = <(MOD_LSFT)>; 
+            keep-mods = <(MOD_LSFT)>; 
+        };
+
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        cmben {
+            bindings = <&layer_en>;
+            key-positions = <15 14>;
+            layers = <1 0>;
+        };
+
+        cmbru {
+            bindings = <&layer_ru>;
+            key-positions = <15 16>;
+            layers = <0 1>;
+        };
+
+        ru_cyr_yo {
+            bindings = <&kp GRAVE>;
+            key-positions = <13 14>;
+            layers = <1>;
+        };
+
+        ru_cyr_hsgn {
+            bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
+            key-positions = <45 46>;
+            layers = <1>;
+        };
+
+        ru_cyr_ha {
+            bindings = <&kp RU_CYRILLIC_HA>;
+            key-positions = <21 22>;
+            layers = <1>;
+        };
+
+        ru_cyr_e {
+            bindings = <&kp RU_CYRILLIC_E>;
+            key-positions = <34 33>;
+            layers = <1>;
+        };
+
+        lpar {
+            bindings = <&kp LPAR>;
+            key-positions = <26 27>;
+            layers = <2 3>;
+        };
+
+        rpar {
+            bindings = <&kp RPAR>;
+            key-positions = <27 28>;
+            layers = <2 3>;
+        };
     };
 
     conditional_layers {
@@ -232,7 +345,7 @@
 &kp TAB          &kp Q              &kp W              &kp E           &kp R               &kp T                                             &kp Y          &kp U           &kp I              &kp O          &kp P             &kp BACKSPACE
 &u_mt LCTRL ESC  &u_mtl LEFT_GUI A  &u_mtl LEFT_ALT S  &u_mtl LSHFT D  &u_mtl LCTRL F      &kp G                                             &kp H          &u_mtr RCTRL J  &u_mtr RSHFT K     &u_mtr RALT L  &u_mtr RGUI SEMI  &kp ENTER
 &kp LSHFT        &kp Z              &kp X              &kp C           &kp V               &kp B          &kp C_MUTE       &kp C_PLAY_PAUSE  &kp N          &kp M           &kp COMMA          &kp DOT        &kp FSLH          &kp RSHFT
-                                    &kp LGUI           &kp LALT        &u_osm_lt 5 LSHIFT  &u_lt 4 SPACE  &u_lt 5 SPACE    &key_repeat       &u_lt 2 ENTER  &kp RALT        &u_mt RGUI C_MENU  &kp RCTRL
+                                    &kp LGUI           &kp LALT        &u_ltsk 5 LSHIFT  &m_la 4 SPACE  &u_lt 5 SPACE    &key_repeat       &m_la 2 ENTER  &kp RALT        &u_mt RGUI C_MENU  &kp RCTRL
             >;
 
             display-name = "Base";
@@ -268,7 +381,7 @@
             bindings = <
 &trans     &trans     &trans    &trans     &trans            &trans                       &trans     &trans                 &trans                 &trans               &trans               &trans
 &kp TILDE  &kp GRAVE  &kp LT    &kp SEMI   &kp LEFT_BRACKET  &kp PRCNT                    &kp CARET  &kp RIGHT_BRACKET      &kp COLON              &kp GT               &kp SQT              &trans
-&trans     &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR        &kp MINUS                    &kp PLUS   &u_osm_mt RCTRL RCTRL  &u_osm_mt RSHFT RSHFT  &u_osm_mt RALT RALT  &u_osm_mt RGUI RGUI  &kp DQT
+&trans     &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR        &kp MINUS                    &kp PLUS   &cm_lctrl  &cm_lshft  &cm_lalt  &cm_lgui  &kp DQT
 &trans     &kp PIPE   &kp AMPS  &kp ASTRK  &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH               &kp COMMA              &kp DOT              &kp QMARK            &trans
                       &trans    &trans     &trans            &trans     &trans    &trans  &none      &trans                 &trans                 &trans
             >;
@@ -281,7 +394,7 @@
             bindings = <
 &trans         &trans     &trans    &trans       &trans            &trans                       &trans     &trans                 &trans                 &trans               &trans               &trans
 &en TILDE      &en GRAVE  &en LT    &kp RU_SEMI  &en LEFT_BRACKET  &kp PRCNT                    &en CARET  &en RIGHT_BRACKET      &kp RU_COLON           &en GT               &en SQT              &trans
-&kp RU_NUMERO  &kp EXCL   &en AT    &en HASH     &en DOLLAR        &kp MINUS                    &kp PLUS   &u_osm_mt RCTRL RCTRL  &u_osm_mt RSHFT RSHFT  &u_osm_mt RALT RALT  &u_osm_mt RGUI RGUI  &kp RU_DQT
+&kp RU_NUMERO  &kp EXCL   &en AT    &en HASH     &en DOLLAR        &kp MINUS                    &kp PLUS   &cm_lctrl &cm_lshft  &cm_lalt &cm_lgui  &kp RU_DQT
 &trans         &kp PIPE   &en AMPS  &kp ASTRK    &kp FSLH          &kp UNDER  &trans    &trans  &kp EQUAL  &kp BSLH               &kp RU_COMMA           &kp RU_DOT           &kp RU_QMARK         &trans
                           &trans    &trans       &trans            &trans     &trans    &trans  &none      &trans                 &trans                 &trans
             >;
@@ -291,7 +404,7 @@
             bindings = <
 &kp F1  &kp F2                   &kp F3               &kp F4                  &kp F5                 &kp F6                         &kp F7         &kp F8    &kp F9     &kp F10          &kp F11          &kp F12
 &trans  &kp LA(TAB)              &kp LC(LEFT)         &none                   &kp LC(RIGHT)          &kp LC(TAB)                    &kp INS        &kp HOME  &kp PG_UP  &caps_word       &kp PAUSE_BREAK  &trans
-&trans  &u_osm_mt LEFT_GUI LGUI  &u_osm_mt LALT LALT  &u_osm_mt LSHIFT LSHFT  &u_osm_mt LCTRL LCTRL  &kp ENTER                      &kp LEFT       &kp DOWN  &kp UP     &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp ENTER
+&trans  &cm_lgui  &cm_lalt  &cm_lshft  &cm_lctrl  &kp ENTER                      &kp LEFT       &kp DOWN  &kp UP     &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp ENTER
 &trans  &kp LC(Z)                &kp LC(X)            &kp LC(C)               &kp LC(V)              &kp LC(B)    &trans    &trans  &kp DEL        &kp END   &kp PG_DN  &kp CAPS         &kp SCROLLLOCK   &trans
                                  &trans               &trans                  &trans                 &none        &trans    &trans  &u_lt 2 ENTER  &trans    &trans     &trans
             >;
