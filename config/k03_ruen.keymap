@@ -210,7 +210,7 @@
             tap-ms = <0>;
             bindings = 
                 <&macro_press>,
-                    <&u_htsk LGUI LGUI>
+                    <&u_htsk LGUI LGUI>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                     <&u_htsk LGUI LGUI>
@@ -224,7 +224,7 @@
             tap-ms = <0>;
             bindings = 
                 <&macro_press>,
-                    <&u_htsk LALT LALT>
+                    <&u_htsk LALT LALT>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                     <&u_htsk LALT LALT>
@@ -238,7 +238,7 @@
             tap-ms = <0>;
             bindings = 
                 <&macro_press>,
-                    <&u_htsk LCTRL LCTRL>
+                    <&u_htsk LCTRL LCTRL>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                     <&u_htsk LCTRL LCTRL>
@@ -252,7 +252,7 @@
             tap-ms = <0>;
             bindings = 
                 <&macro_press>,
-                    <&u_htsk LSHFT LSHFT>
+                    <&u_htsk LSHFT LSHFT>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                     <&u_htsk LSHFT LSHFT>
