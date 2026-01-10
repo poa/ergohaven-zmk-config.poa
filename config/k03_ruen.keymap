@@ -123,7 +123,7 @@
             tap-ms = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp 0>, // do nothing, fire all sticky keys
+                <&kp 0>,
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -271,7 +271,7 @@
         cmben {
             bindings = <&layer_en>;
             key-positions = <15 14>;
-            layers = <1 0>;
+            layers = <0 1>;
         };
 
         cmbru {
@@ -307,13 +307,13 @@
         lpar {
             bindings = <&kp LPAR>;
             key-positions = <26 27>;
-            layers = <2 3>;
+            layers = <2 3 0 1>;
         };
 
         rpar {
             bindings = <&kp RPAR>;
             key-positions = <27 28>;
-            layers = <2 3>;
+            layers = <2 3 0 1>;
         };
     };
 
@@ -397,55 +397,55 @@
         Nav {
             display-name = "Nav";
             bindings = <
-&kp F1  &kp F2       &kp F3        &kp F4     &kp F5         &kp F6                         &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
-&trans  &kp LA(TAB)  &kp LC(LEFT)  &none      &kp LC(RIGHT)  &kp LC(TAB)                    &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
-&trans  &cm_lgui     &cm_lalt      &cm_lshft  &cm_lctrl      &kp ENTER                      &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp ENTER
-&trans  &kp LC(Z)    &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(B)    &trans    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
-                     &trans        &trans     &none          &trans       &trans    &trans  &trans      &mo 2     &trans    &trans
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                        &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                    &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                     &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
+                    &trans        &trans      &none          &trans      &trans    &trans  &kp SPACE   &mo 2     &trans    &trans
             >;
         };
 
         Mouse {
             display-name = "Mouse";
             bindings = <
-&kp F1  &kp F2       &kp F3        &kp F4     &kp F5         &kp F6                            &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
-&trans  &kp LA(TAB)  &kp LC(LEFT)  &none      &kp LC(RIGHT)  &kp LC(TAB)                       &none           &none           &none         &none            &none    &trans
-&trans  &cm_lgui     &cm_lalt      &cm_lshft  &cm_lctrl      &kp ENTER                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp ENTER
-&trans  &kp LC(Z)    &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(B)    &trans    &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    &trans
-                     &trans        &trans     &trans         &trans       &none     &mkp LCLK  &mkp RCLK       &mkp MCLK       &mkp MB4      &mkp MB5
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                           &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                       &none           &none           &none         &none            &none    &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &trans
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    &trans
+                    &trans        &trans      &trans         &trans      &none     &mkp LCLK  &mkp RCLK       &mkp MCLK       &mkp MB4      &mkp MB5
             >;
         };
 
         Num {
             display-name = "Num";
             bindings = <
-&kp F1  &kp F2       &kp F3        &kp F4     &kp F5         &kp F6                         &kp F7           &kp F8      &kp F9     &kp F10    &kp F11         &kp F12
-&trans  &kp LA(TAB)  &kp LC(LEFT)  &none      &kp LC(RIGHT)  &kp LC(TAB)                    &kp KP_MULTIPLY  &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp KP_PLUS     &trans
-&trans  &cm_lgui     &cm_lalt      &cm_lshft  &cm_lctrl      &kp ENTER                      &kp KP_DIVIDE    &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp KP_MINUS    &kp KP_ENTER
-&trans  &kp LC(Z)    &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(B)    &trans    &trans  &kp KP_N0        &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp KP_NUMLOCK  &trans
-                     &trans        &trans     &trans         &trans       &none     &trans  &trans           &kp KP_DOT  &trans     &trans
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                        &kp F7           &kp F8      &kp F9     &kp F10    &kp F11         &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                    &kp KP_MULTIPLY  &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp KP_PLUS     &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                     &kp KP_DIVIDE    &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp KP_MINUS    &kp KP_ENTER
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans  &kp KP_N0        &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp KP_NUMLOCK  &trans
+                    &trans        &trans      &trans         &trans      &none     &trans  &kp SPACE        &kp KP_DOT  &trans     &trans
             >;
         };
 
         Func {
             display-name = "Func";
             bindings = <
-&kp F1  &kp F2       &kp F3        &kp F4     &kp F5         &kp F6                         &kp F7   &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &kp LA(TAB)  &kp LC(LEFT)  &none      &kp LC(RIGHT)  &kp LC(TAB)                    &kp F12  &kp F7  &kp F8  &kp F9   &kp F15  &trans
-&trans  &cm_lgui     &cm_lalt      &cm_lshft  &cm_lctrl      &kp ENTER                      &kp F11  &kp F4  &kp F5  &kp F6   &kp F14  &trans
-&trans  &kp LC(Z)    &kp LC(X)     &kp LC(C)  &kp LC(V)      &kp LC(B)    &trans    &trans  &kp F10  &kp F1  &kp F2  &kp F3   &kp F13  &trans
-                     &trans        &trans     &trans         &trans       &none     &trans  &trans   &trans  &trans  &trans
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                        &kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                    &kp F12    &kp F7  &kp F8  &kp F9   &kp F15  &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                     &kp F11    &kp F4  &kp F5  &kp F6   &kp F14  &trans
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans  &kp F10    &kp F1  &kp F2  &kp F3   &kp F13  &trans
+                    &trans        &trans      &trans         &trans      &none     &trans  &kp SPACE  &trans  &trans  &trans
             >;
         };
 
         Media {
             display-name = "Media";
             bindings = <
-&bootloader     &trans        &trans        &trans            &trans        &trans                          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&bt BT_CLR_ALL  &out OUT_BLE  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans                          &out OUT_BLE  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans        &trans
-&studio_unlock  &out OUT_USB  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans    &trans  &out OUT_USB  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans
-                              &trans        &trans            &trans        &none         &trans    &trans  &none         &trans        &trans            &trans
+&bootloader     &trans        &trans        &trans        &trans        &trans                              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
+&bt BT_CLR_ALL  &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &out OUT_BLE                        &out OUT_BLE  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans        &trans
+&studio_unlock  &none         &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &out OUT_USB  &sys_reset    &trans  &out OUT_USB  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans
+                              &trans        &trans        &none         &trans        &trans        &trans  &trans        &none         &trans            &trans
             >;
         };
     };
