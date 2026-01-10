@@ -129,7 +129,7 @@
                 <&macro_param_2to1 &kp MACRO_PLACEHOLDER>;
         };
 
-        m_la: m_la {
+        m_la: m_layer_advanced {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             wait-ms = <0>;
@@ -198,7 +198,7 @@
             flavor = "tap-preferred";
         };
 
-        u_mt: mod_tap {
+        u_mt: user_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -206,7 +206,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        u_lt: layer_tap {
+        u_lt: user_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <50>;
@@ -272,6 +272,16 @@
                 <&u_htsk LSHFT LSHFT>;
         };
 
+
+        swap_desk: swap_desk {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&m_hold_mod_press_key LGUI TAB>, <&kp TAB>;
+
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
         swap_tabs: swap_tabs {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -281,7 +291,7 @@
             keep-mods = <(MOD_LCLT)>;
         };
 
-        swap_tabs: swap_wins {
+        swap_wins: swap_wins {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&m_hold_mod_press_key LALT TAB>, <&kp TAB>;
