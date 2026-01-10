@@ -101,7 +101,7 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_tap>,
-                <&m_release_key_twice MACRO_PLACEHOLDER>;
+                <&macro_param_1to1 &m_release_key_twice MACRO_PLACEHOLDER>;
         };
 
         m_press_key_twice: m_press_key_twice {
@@ -114,7 +114,7 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_tap>,
-                <&m_release_key_twice MACRO_PLACEHOLDER>;
+                <&macro_param_1to1 &m_release_key_twice MACRO_PLACEHOLDER>;
         };
 
         m_hold_mod_press_key: m_hold_mod_press_key {
@@ -163,7 +163,7 @@
         sticky_forever: sticky_forever {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
-            bindings = <&m_press_key_once>;
+            bindings = <&m_press_key_twice>;
             release-after-ms = <60000>;
             quick-release;
             ignore-modifiers;
@@ -287,8 +287,8 @@
             #binding-cells = <0>;
             bindings = <&m_hold_mod_press_key LCTRL TAB>, <&kp TAB>;
 
-            mods = <(MOD_LCLT|MOD_LCTL)>;
-            keep-mods = <(MOD_LCLT|MOD_LCTL)>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
 
         swap_wins: swap_wins {
