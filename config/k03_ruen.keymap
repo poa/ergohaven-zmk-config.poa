@@ -348,6 +348,19 @@
             key-positions = <32 31>;
             layers = <0 1>;
         };
+
+        repeat {
+            bindings = <&key_repeat>;
+            key-positions = <54 55>;
+            layers = <0 1>;
+            timeout-ms = <70>;
+        };
+
+        clear_all_bt {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <12 13>;
+            layers = <8>;
+        };
     };
 
     conditional_layers {
@@ -370,11 +383,11 @@
         Base {
             display-name = "Base";
             bindings = <
-&gresc           &kp N1  &kp N2    &kp N3          &kp N4   &kp N5                                           &kp N6           &kp N7       &kp N8               &kp N9            &kp N0    &kp BSPC
-&kp TAB          &kp Q   &kp W     &kp E           &kp R    &kp T                                            &kp Y            &kp U        &kp I                &kp O             &kp P     &kp BACKSPACE
-&u_mt LCTRL ESC  &kp A   &kp S     &kp D           &kp F    &kp G                                            &kp H            &kp J        &kp K                &kp L             &kp SEMI  &kp ENTER
-&kp LSHFT        &kp Z   &kp X     &kp C           &kp V    &kp B          &kp C_MUTE      &kp C_PLAY_PAUSE  &kp N            &kp M        &kp COMMA            &kp DOT           &kp FSLH  &kp RSHFT
-                         &sk LGUI  &u_ltsk 6 LALT  &m_la 4  &u_lt 6 SPACE  &td_lt_mouse    &kp ENTER         &u_ltsk 5 RSHFT  &u_htsl 2 2  &u_htsk RCTRL LCTRL  &u_mt RGUI K_APP
+&gresc           &kp N1  &kp N2    &kp N3             &kp N4   &kp N5                                           &kp N6           &kp N7       &kp N8               &kp N9            &kp N0    &kp BSPC
+&kp TAB          &kp Q   &kp W     &kp E              &kp R    &kp T                                            &kp Y            &kp U        &kp I                &kp O             &kp P     &kp BACKSPACE
+&u_mt LCTRL ESC  &kp A   &kp S     &kp D              &kp F    &kp G                                            &kp H            &kp J        &kp K                &kp L             &kp SEMI  &kp ENTER
+&kp LSHFT        &kp Z   &kp X     &kp C              &kp V    &kp B          &kp C_MUTE      &kp C_PLAY_PAUSE  &kp N            &kp M        &kp COMMA            &kp DOT           &kp FSLH  &kp RSHFT
+                         &sk LGUI  &u_htsk LALT LALT  &m_la 4  &u_lt 6 SPACE  &td_lt_mouse    &kp ENTER         &u_ltsk 5 RSHFT  &u_htsl 2 2  &u_htsk RCTRL LCTRL  &u_mt RGUI K_APP
             >;
 
             sensor-bindings =
@@ -430,11 +443,11 @@
         Nav {
             display-name = "Nav";
             bindings = <
-&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                               &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
-&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                           &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
-&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                            &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
-&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans       &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
-                    &kp LEFT      &kp RIGHT   &none          &trans      &trans      &key_repeat  &kp SPACE   &mo 2     &trans    &trans
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                          &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                      &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                       &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
+                    &kp LEFT      &kp RIGHT   &none          &trans      &trans      &trans  &kp SPACE   &mo 2     &trans    &trans
             >;
 
             sensor-bindings = <&enc_prevnext>;
@@ -476,11 +489,11 @@
         Media {
             display-name = "Media";
             bindings = <
-&bootloader     &trans        &trans        &trans        &trans        &trans                                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&bt BT_CLR_ALL  &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &out OUT_BLE                            &out OUT_BLE  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans        &trans
-&soft_off       &none         &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &out OUT_USB  &sys_reset    &sys_reset  &out OUT_USB  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &studio_unlock
-                              &trans        &trans        &none         &trans        &trans        &trans      &trans        &none         &trans            &trans
+&bootloader  &trans        &trans        &trans        &trans        &trans                                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
+&none        &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &out OUT_BLE                            &out OUT_BLE  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans        &trans
+&soft_off    &none         &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &out OUT_USB  &sys_reset    &sys_reset  &out OUT_USB  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &studio_unlock
+                           &trans        &trans        &none         &trans        &trans        &trans      &trans        &none         &trans            &trans
             >;
         };
     };
