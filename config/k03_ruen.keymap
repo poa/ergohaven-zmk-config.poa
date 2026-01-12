@@ -18,13 +18,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL>,
-                <&kp LSHIFT>,
-                <&kp N2>,
+                <&kp LCTRL &kp LSHIFT &kp N2>,
                 <&macro_release>,
-                <&kp N2>,
-                <&kp LSHIFT>,
-                <&kp LCTRL>;
+                <&kp N2 &kp LSHIFT &kp LCTRL>;
+
             label = "TO_RU";
             wait-ms = <0>;
         };
@@ -34,13 +31,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL>,
-                <&kp LSHIFT>,
-                <&kp N1>,
+                <&kp LCTRL &kp LSHIFT &kp N1>,
                 <&macro_release>,
-                <&kp N1>,
-                <&kp LSHIFT>,
-                <&kp LCTRL>;
+                <&kp N1 &kp LSHIFT &kp LCTRL>;
+
             label = "TO_EN";
             wait-ms = <0>;
         };
@@ -307,60 +301,80 @@
             bindings = <&layer_en>;
             key-positions = <15 14>;
             layers = <0 1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         cmbru {
             bindings = <&layer_ru>;
             key-positions = <15 16>;
             layers = <0 1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         ru_cyr_yo {
             bindings = <&kp GRAVE>;
             key-positions = <13 14>;
             layers = <1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         ru_cyr_hsgn {
             bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
             key-positions = <45 46>;
             layers = <1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         ru_cyr_ha {
             bindings = <&kp RU_CYRILLIC_HA>;
             key-positions = <21 22>;
             layers = <1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         ru_cyr_e {
             bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <34 33>;
             layers = <1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         lpar {
             bindings = <&kp LPAR>;
             key-positions = <26 27>;
             layers = <2 3 0 1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         rpar {
             bindings = <&kp RPAR>;
             key-positions = <27 28>;
             layers = <2 3 0 1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         hyphen {
             bindings = <&kp MINUS>;
             key-positions = <33 32>;
             layers = <0 1>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
         };
 
         underscore {
             bindings = <&kp UNDER>;
             key-positions = <32 31>;
             layers = <0 1>;
+            require-prior-idle-ms = <20>;
+            timeout-ms = <30>;
         };
 
         repeat {
@@ -397,11 +411,11 @@
         Base {
             display-name = "Base";
             bindings = <
-&gresc           &kp N1  &kp N2    &kp N3             &kp N4   &kp N5                                           &kp N6           &kp N7       &kp N8               &kp N9            &kp N0    &kp BSPC
-&kp TAB          &kp Q   &kp W     &kp E              &kp R    &kp T                                            &kp Y            &kp U        &kp I                &kp O             &kp P     &kp BACKSPACE
-&u_mt LCTRL ESC  &kp A   &kp S     &kp D              &kp F    &kp G                                            &kp H            &kp J        &kp K                &kp L             &kp SEMI  &kp ENTER
-&kp LSHFT        &kp Z   &kp X     &kp C              &kp V    &kp B          &kp C_MUTE      &kp C_PLAY_PAUSE  &kp N            &kp M        &kp COMMA            &kp DOT           &kp FSLH  &kp RSHFT
-                         &sk LGUI  &u_htsk LALT LALT  &m_la 4  &u_lt 6 SPACE  &td_lt_mouse    &kp ENTER         &u_ltsk 5 RSHFT  &u_htsl 2 2  &u_htsk RCTRL LCTRL  &u_mt RGUI K_APP
+&gresc           &kp N1  &kp N2    &kp N3             &kp N4   &kp N5                                           &kp N6                &kp N7       &kp N8               &kp N9            &kp N0    &kp BSPC
+&kp TAB          &kp Q   &kp W     &kp E              &kp R    &kp T                                            &kp Y                 &kp U        &kp I                &kp O             &kp P     &kp BACKSPACE
+&u_mt LCTRL ESC  &kp A   &kp S     &kp D              &kp F    &kp G                                            &kp H                 &kp J        &kp K                &kp L             &kp SEMI  &kp ENTER
+&kp LSHFT        &kp Z   &kp X     &kp C              &kp V    &kp B          &kp C_MUTE      &kp C_PLAY_PAUSE  &kp N                 &kp M        &kp COMMA            &kp DOT           &kp FSLH  &kp RSHFT
+                         &sk LGUI  &u_htsk LALT LALT  &m_la 4  &u_lt 6 SPACE  &td_lt_mouse    &kp ENTER         &u_htsk RSHIFT RSHFT  &u_htsl 2 2  &u_htsk RCTRL LCTRL  &u_mt RGUI K_APP
             >;
 
             sensor-bindings =
@@ -481,11 +495,11 @@
         Num {
             display-name = "Num";
             bindings = <
-&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                        &kp F7           &kp F8      &kp F9     &kp F10    &kp F11         &kp F12
-&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                    &kp KP_MULTIPLY  &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp KP_PLUS     &trans
-&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                     &kp KP_DIVIDE    &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp KP_MINUS    &kp KP_ENTER
-&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans  &kp KP_N0        &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp KP_NUMLOCK  &kp ENTER
-                    &trans        &trans      &trans         &none       &trans    &trans  &kp SPACE        &kp KP_DOT  &trans     &trans
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                        &kp F7           &kp F8     &kp F9     &kp F10     &kp F11         &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                    &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp KP_PLUS     &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                     &kp KP_DIVIDE    &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp KP_MINUS    &kp KP_ENTER
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans  &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3   &kp KP_NUMLOCK  &kp ENTER
+                    &trans        &trans      &trans         &none       &trans    &trans  &kp SPACE        &kp KP_N0  &kp KP_N0  &kp KP_DOT
             >;
         };
 
