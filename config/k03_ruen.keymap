@@ -51,7 +51,7 @@
         layer_ru: layer_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &to_ru>;
+            bindings = <&to 2 &to_ru>;
             label = "LAYER_RU";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -141,6 +141,15 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER &kp LSHFT &kp LCTRL &kp LALT &kp LGUI>;
+        };
+
+        layer_enalt: layer_enalt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 1 &to_en>;
+            label = "LAYER_ENALT";
+            wait-ms = <0>;
+            tap-ms = <30>;
         };
     };
 
@@ -280,7 +289,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LT_MOUSE";
             #binding-cells = <0>;
-            bindings = <&u_lt 7 SPACE>, <&mo 5>;
+            bindings = <&u_lt 8 SPACE>, <&mo 6>;
         };
 
         u_htsl: hold_tap_sticky_layer {
@@ -300,7 +309,7 @@
         cmben {
             bindings = <&layer_en>;
             key-positions = <15 14>;
-            layers = <0 1>;
+            layers = <0 2 1>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -308,7 +317,7 @@
         cmbru {
             bindings = <&layer_ru>;
             key-positions = <15 16>;
-            layers = <0 1>;
+            layers = <0 2 1>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -316,7 +325,7 @@
         ru_cyr_yo {
             bindings = <&kp GRAVE>;
             key-positions = <13 14>;
-            layers = <1>;
+            layers = <2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -324,7 +333,7 @@
         ru_cyr_hsgn {
             bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
             key-positions = <45 46>;
-            layers = <1>;
+            layers = <2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -332,7 +341,7 @@
         ru_cyr_ha {
             bindings = <&kp RU_CYRILLIC_HA>;
             key-positions = <21 22>;
-            layers = <1>;
+            layers = <2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -340,7 +349,7 @@
         ru_cyr_e {
             bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <34 33>;
-            layers = <1>;
+            layers = <2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -348,7 +357,7 @@
         lpar {
             bindings = <&kp LPAR>;
             key-positions = <26 27>;
-            layers = <2 3 0 1>;
+            layers = <3 4 0 2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -356,7 +365,7 @@
         rpar {
             bindings = <&kp RPAR>;
             key-positions = <27 28>;
-            layers = <2 3 0 1>;
+            layers = <3 4 0 2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -364,7 +373,7 @@
         hyphen {
             bindings = <&kp MINUS>;
             key-positions = <33 32>;
-            layers = <0 1>;
+            layers = <0 2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <20>;
         };
@@ -372,7 +381,7 @@
         underscore {
             bindings = <&kp UNDER>;
             key-positions = <32 31>;
-            layers = <0 1>;
+            layers = <0 2>;
             require-prior-idle-ms = <20>;
             timeout-ms = <30>;
         };
@@ -380,14 +389,22 @@
         repeat {
             bindings = <&key_repeat>;
             key-positions = <54 55>;
-            layers = <0 1>;
+            layers = <0 2>;
             timeout-ms = <70>;
         };
 
         clear_all_bt {
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <12 13>;
-            layers = <8>;
+            layers = <9>;
+        };
+
+        cmbenalt {
+            bindings = <&layer_en>;
+            key-positions = <15 14 13>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
+            layers = <0 2>;
         };
     };
 
@@ -395,13 +412,13 @@
         compatible = "zmk,conditional-layers";
 
         Media {
-            if-layers = <2 4>;
-            then-layer = <8>;
+            if-layers = <3 5>;
+            then-layer = <9>;
         };
 
         MediaRu {
-            if-layers = <3 4>;
-            then-layer = <8>;
+            if-layers = <4 5>;
+            then-layer = <9>;
         };
     };
 
@@ -411,11 +428,11 @@
         Base {
             display-name = "Base";
             bindings = <
-&gresc           &kp N1  &kp N2    &kp N3             &kp N4   &kp N5                                           &kp N6                &kp N7       &kp N8               &kp N9            &kp N0    &kp BSPC
-&kp TAB          &kp Q   &kp W     &kp E              &kp R    &kp T                                            &kp Y                 &kp U        &kp I                &kp O             &kp P     &kp BACKSPACE
-&u_mt LCTRL ESC  &kp A   &kp S     &kp D              &kp F    &kp G                                            &kp H                 &kp J        &kp K                &kp L             &kp SEMI  &kp ENTER
-&kp LSHFT        &kp Z   &kp X     &kp C              &kp V    &kp B          &kp C_MUTE      &kp C_PLAY_PAUSE  &kp N                 &kp M        &kp COMMA            &kp DOT           &kp FSLH  &kp RSHFT
-                         &sk LGUI  &u_htsk LALT LALT  &m_la 4  &u_lt 6 SPACE  &td_lt_mouse    &kp ENTER         &u_htsk RSHIFT RSHFT  &u_htsl 2 2  &u_htsk RCTRL LCTRL  &u_mt RGUI K_APP
+&gresc           &kp N1  &kp N2             &kp N3             &kp N4   &kp N5                                           &kp N6                &kp N7       &kp N8               &kp N9            &kp N0    &kp BSPC
+&kp TAB          &kp Q   &kp W              &kp E              &kp R    &kp T                                            &kp Y                 &kp U        &kp I                &kp O             &kp P     &kp BACKSPACE
+&u_mt LCTRL ESC  &kp A   &kp S              &kp D              &kp F    &kp G                                            &kp H                 &kp J        &kp K                &kp L             &kp SEMI  &kp SQT
+&kp LSHFT        &kp Z   &kp X              &kp C              &kp V    &kp B          &kp C_MUTE      &kp C_PLAY_PAUSE  &kp N                 &kp M        &kp COMMA            &kp DOT           &kp FSLH  &kp RSHFT
+                         &u_htsk LGUI LGUI  &u_htsk LALT LALT  &m_la 5  &u_lt 7 SPACE  &td_lt_mouse    &kp ENTER         &u_htsk RSHIFT RSHFT  &u_htsl 3 3  &u_htsk RCTRL RCTRL  &u_mt RGUI K_APP
             >;
 
             sensor-bindings =
@@ -427,14 +444,35 @@
                 <&enc_vol>;
         };
 
+        EnAlt {
+            display-name = "EnAlt";
+            bindings = <
+&gresc  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                    &kp N6  &kp N7       &kp N8     &kp N9   &kp N0     &trans
+&trans  &kp Q   &kp W   &kp L   &kp D   &kp G                     &kp K   &kp J        &kp O      &kp U    &kp MINUS  &trans
+&trans  &kp N   &kp S   &kp R   &kp T   &kp P                     &kp Y   &kp H        &kp E      &kp I    &kp A      &kp SQT
+&trans  &kp Z   &kp X   &kp C   &kp V   &kp B   &trans    &trans  &kp J   &kp M        &kp COMMA  &kp DOT  &kp FSLH   &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &u_htsl 3 3  &trans     &trans
+            >;
+
+            sensor-bindings =
+                <&enc_vol>,
+                <&enc_prevnext>,
+                <&enc_vol>,
+                <&enc_vol>,
+                <&enc_vol>,
+                <&enc_vol>;
+
+            label = "EnAlt";
+        };
+
         BaseRu {
             display-name = "BaseRu";
             bindings = <
 &gresc  &kp N1                   &kp N2                &kp N3              &kp N4              &kp N5                                &kp N6              &kp N7                     &kp N8               &kp N9                 &kp N0               &trans
 &trans  &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
-&trans  &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &trans
+&trans  &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
 &trans  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &trans    &trans  &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_DOT           &trans
-                                 &trans                &trans              &trans              &trans              &trans    &trans  &trans              &u_htsl 3 3                &trans               &trans
+                                 &trans                &trans              &trans              &trans              &trans    &trans  &trans              &u_htsl 4 4                &trans               &trans
             >;
 
             sensor-bindings =
@@ -475,7 +513,7 @@
 &trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                      &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
 &trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                       &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
 &trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
-                    &kp LEFT      &kp RIGHT   &none          &trans      &trans      &trans  &kp SPACE   &mo 2     &trans    &trans
+                    &kp LEFT      &kp RIGHT   &none          &trans      &trans      &trans  &kp SPACE   &mo 3     &trans    &trans
             >;
 
             sensor-bindings = <&enc_prevnext>;
