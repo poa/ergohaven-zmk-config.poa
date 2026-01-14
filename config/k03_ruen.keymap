@@ -57,6 +57,15 @@
             tap-ms = <30>;
         };
 
+        layer_enalt: layer_enalt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 1 &to_en>;
+            label = "LAYER_ENALT";
+            wait-ms = <0>;
+            tap-ms = <30>;
+        };
+
         en: en {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -143,14 +152,6 @@
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER &kp LSHFT &kp LCTRL &kp LALT &kp LGUI>;
         };
 
-        layer_enalt: layer_enalt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 1 &to_en>;
-            label = "LAYER_ENALT";
-            wait-ms = <0>;
-            tap-ms = <30>;
-        };
     };
 
     behaviors {
@@ -322,6 +323,14 @@
             require-prior-idle-ms = <20>;
         };
 
+        cmbenalt {
+            bindings = <&layer_enalt>;
+            key-positions = <15 14 13>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <20>;
+            layers = <0 1 2>;
+        };
+
         ru_cyr_yo {
             bindings = <&kp GRAVE>;
             key-positions = <13 14>;
@@ -399,13 +408,6 @@
             layers = <9>;
         };
 
-        cmbenalt {
-            bindings = <&layer_enalt>;
-            key-positions = <15 14 13>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
-            layers = <0 2>;
-        };
     };
 
     conditional_layers {
