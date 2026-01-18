@@ -136,41 +136,41 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - SHORT I
-  - TSE
-  - U
-  - KA
-  - IE
-  - EN
-  - GHE
-  - SHA
-  - SHCHA
-  - ZE
+  - CYRILLIC SHORT I
+  - CYRILLIC TSE
+  - CYRILLIC U
+  - CYRILLIC KA
+  - CYRILLIC IE
+  - CYRILLIC EN
+  - CYRILLIC GHE
+  - CYRILLIC SHA
+  - CYRILLIC SHCHA
+  - CYRILLIC ZE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ER, h: LGUI}
-  - {t: YERU, h: LALT}
-  - {t: VE, h: LSHFT}
-  - {t: A, h: LCTRL}
-  - PE
-  - ER
-  - {t: O, h: RCTRL}
-  - {t: EL, h: RSHFT}
-  - {t: DE, h: RALT}
-  - {t: ZHE, h: RGUI}
-  - E
+  - {t: CYRILLIC ER, h: LGUI}
+  - {t: CYRILLIC YERU, h: LALT}
+  - {t: CYRILLIC VE, h: LSHFT}
+  - {t: CYRILLIC A, h: LCTRL}
+  - CYRILLIC PE
+  - CYRILLIC ER
+  - {t: CYRILLIC O, h: RCTRL}
+  - {t: CYRILLIC EL, h: RSHFT}
+  - {t: CYRILLIC DE, h: RALT}
+  - {t: CYRILLIC ZHE, h: RGUI}
+  - CYRILLIC E
   - {t: ▽, type: trans}
-  - YA
-  - CHE
-  - ES
-  - EM
-  - I
+  - CYRILLIC YA
+  - CYRILLIC CHE
+  - CYRILLIC ES
+  - CYRILLIC EM
+  - CYRILLIC I
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - TE
-  - SOFT SIGN
-  - BE
-  - YU
+  - CYRILLIC TE
+  - CYRILLIC SOFT SIGN
+  - CYRILLIC BE
+  - CYRILLIC YU
   - .
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -199,21 +199,21 @@ layers:
   - '~'
   - '`'
   - <
-  - ;
-  - '['
-  - '%'
-  - ^
-  - ']'
-  - ':'
   - '>'
+  - ;
+  - '|'
+  - ^
+  - ':'
+  - ':'
+  - $
   - ''''
   - {t: ▽, type: trans}
   - '&ru RU_NUMERO'
   - '!'
-  - '@'
-  - '#'
-  - $
-  - '-'
+  - '*'
+  - _
+  - '='
+  - '&'
   - +
   - {t: '&m_press_key_twice LCTRL', h: sticky, s: '&m_release_key_twice LCTRL'}
   - {t: '&m_press_key_twice LSHFT', h: sticky, s: '&m_release_key_twice LSHFT'}
@@ -221,9 +221,9 @@ layers:
   - {t: '&m_press_key_twice LGUI', h: sticky, s: '&m_release_key_twice LGUI'}
   - '"'
   - {t: ▽, type: trans}
-  - '|'
+  - '@'
   - '&'
-  - '*'
+  - '-'
   - /
   - _
   - {t: ▽, type: trans}
@@ -236,7 +236,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - \
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -562,7 +562,7 @@ layers:
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
   - '&bootloader'
-  - BT CLR
+  - '&td_bt_clr'
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -600,14 +600,14 @@ layers:
   - NEXT
   - {t: ▽, type: trans}
   - '&studio_unlock'
+  - LEFT
+  - RIGHT
+  - ''
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
@@ -624,13 +624,13 @@ combos:
   k: '`'
   l: [BaseRu]
 - p: [45, 46]
-  k: HARD SIGN
+  k: CYRILLIC HARD SIGN
   l: [BaseRu]
 - p: [21, 22]
-  k: HA
+  k: CYRILLIC HA
   l: [BaseRu]
 - p: [34, 33]
-  k: E
+  k: CYRILLIC E
   l: [BaseRu]
 - p: [26, 27]
   k: (
@@ -650,3 +650,5 @@ combos:
 - p: [12, 13]
   k: BT CLR ALL
   l: [Media]
+- p: [54, 53]
+  k: Media
