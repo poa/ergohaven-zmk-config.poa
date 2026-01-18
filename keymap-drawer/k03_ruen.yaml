@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: k03_ruen}
 layers:
   Base:
-  - '&GRAVE'
+  - {t: ESC, s: '`'}
   - '1'
   - '2'
   - '3'
@@ -26,10 +26,10 @@ layers:
   - P
   - BACKSPACE
   - {t: ESC, h: LCTRL}
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: D, h: LSHIFT}
-  - {t: F, h: LCTRL}
+  - A
+  - S
+  - D
+  - F
   - G
   - H
   - J
@@ -51,15 +51,15 @@ layers:
   - .
   - /
   - RSHFT
-  - {t: LGUI, h: LGUI}
-  - {t: LALT, h: LALT}
+  - '&u_htsk LGUI LGUI'
+  - '&u_htsk LALT LALT'
   - '&m_la 5'
   - {t: SPACE, h: Num}
   - '&td_lt_mouse'
   - '&key_repeat'
-  - {t: RSHIFT, h: RSHIFT}
-  - {t: '3', h: Sym}
-  - {t: RCTRL, h: RCTRL}
+  - '&u_htsk RSHIFT RSHFT'
+  - {t: Sym, h: '&m_la 3'}
+  - '&u_htsk RCTRL RCTRL'
   - {t: APP, h: RGUI}
   EnAlt:
   - {t: ESC, s: '`'}
