@@ -3,7 +3,7 @@ on:
   workflow_dispatch:  # can be triggered manually
   push:               # automatically run on changes to following paths
     paths:
-      - ".github/workflows/build.yml"
+      - ".github/workflows/build-k03.yml"
       - "config/k03_ruen.keymap"
       - "config/k03.json"
       # - 'boards/*/*/*.keymap'
