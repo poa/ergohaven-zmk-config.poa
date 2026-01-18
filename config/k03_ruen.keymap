@@ -17,15 +17,15 @@
 #define MTSK(key)   &u_mtsk key     key
 #define LTSL(layer) &u_ltsk layer   layer
 
-#DEFINE HRM_LGUI(key) &u_mtl LGUI   key
-#DEFINE HRM_LALT(key) &u_mtl LALT   key
-#DEFINE HRM_LSFT(key) &u_mtl LSHIFT key
-#DEFINE HRM_LCTL(key) &u_mtl LCTRL  key
+#define HRM_LGUI(key) &u_mtl LGUI   key
+#define HRM_LALT(key) &u_mtl LALT   key
+#define HRM_LSFT(key) &u_mtl LSHIFT key
+#define HRM_LCTL(key) &u_mtl LCTRL  key
 
-#DEFINE HRM_RGUI(key) &u_mtr RGUI   key
-#DEFINE HRM_RALT(key) &u_mtr RALT   key
-#DEFINE HRM_RSFT(key) &u_mtr RSHIFT key
-#DEFINE HRM_RCTL(key) &u_mtr RCTRL  key
+#define HRM_RGUI(key) &u_mtr RGUI   key
+#define HRM_RALT(key) &u_mtr RALT   key
+#define HRM_RSFT(key) &u_mtr RSHIFT key
+#define HRM_RCTL(key) &u_mtr RCTRL  key
 
 // }}} DEFINITIONS
 
