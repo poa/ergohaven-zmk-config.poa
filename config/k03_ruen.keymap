@@ -376,23 +376,23 @@
             bindings = <&layer_en>;
             key-positions = <15 14>;
             layers = <0 2 1>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
         };
 
         cmbru {
             bindings = <&layer_ru>;
             key-positions = <15 16>;
             layers = <0 2 1>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
         };
 
         cmbenalt {
             bindings = <&layer_enalt>;
             key-positions = <15 14 13>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <30>;
             layers = <0 1 2>;
         };
 
@@ -400,64 +400,94 @@
             bindings = <&kp GRAVE>;
             key-positions = <12 0>;
             layers = <2>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <30>;
         };
 
         ru_cyr_hsgn {
             bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
             key-positions = <47 46>;
             layers = <2>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
         };
 
         ru_cyr_ha {
             bindings = <&kp RU_CYRILLIC_HA>;
             key-positions = <22 34>;
             layers = <2>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <30>;
         };
 
         ru_cyr_e {
             bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <23 35>;
             layers = <2>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <30>;
         };
 
         hyphen {
             bindings = <&kp MINUS>;
             key-positions = <31 30>;
-            layers = <0 2>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <20>;
+            layers = <0 2 1>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
         };
 
         under {
             bindings = <&kp UNDER>;
             key-positions = <44 45>;
-            layers = <0 2>;
-            require-prior-idle-ms = <20>;
-            timeout-ms = <30>;
+            layers = <0 2 1>;
+            require-prior-idle-ms = <30>;
+            timeout-ms = <50>;
         };
 
         clear_all_bt {
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <12 24>;
-            layers = <10>;
+            layers = <9>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <30>;
         };
 
         l_media {
-            bindings = <&mo 10>;
+            bindings = <&mo 9>;
             key-positions = <54 53>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <30>;
+            layers = <0 1 2>;
         };
 
         plus {
             bindings = <&kp PLUS>;
             key-positions = <18 19>;
+            layers = <0 1 2>;
+        };
+
+        slash {
+            bindings = <&kp SLASH>;
+            key-positions = <29 28>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0 1 2>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <40 41>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0 1 2>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <16 17>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0 1 2>;
         };
     };
 
