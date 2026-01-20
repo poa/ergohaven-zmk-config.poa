@@ -674,10 +674,16 @@ layers:
 combos:
 - p: [15, 14]
   k: '&layer_en'
-  l: [Base, BaseRu, BaseAlt1, BaseAlt2]
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
+- p: [15, 14, 16]
+  k: '&layer_en 1'
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
+- p: [15, 14, 16]
+  k: '&layer_en 2'
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
 - p: [15, 16]
   k: '&layer_ru'
-  l: [Base, BaseRu, BaseAlt1, BaseAlt2]
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
 - p: [15, 14, 16]
   k: '&layer_enalt'
   l: [Base, BaseAlt1, BaseRu, BaseAlt2]
@@ -693,29 +699,26 @@ combos:
 - p: [23, 35]
   k: CYRILLIC E
   l: [BaseRu]
+- p: [18, 19]
+  k: '='
+  l: [Base, BaseAlt1, BaseRu]
 - p: [31, 30]
   k: '-'
-  l: [Base, BaseRu, BaseAlt1, BaseAlt2]
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
 - p: [44, 45]
   k: _
-  l: [Base, BaseRu, BaseAlt1, BaseAlt2]
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
+- p: [16, 17]
+  k: '|'
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
+- p: [29, 28]
+  k: /
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
+- p: [40, 41]
+  k: \
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu]
 - p: [12, 24]
   k: BT CLR ALL
   l: [Media]
 - p: [54, 53]
   k: Media
-- p: [18, 19]
-  k: '='
-  l: [Base, BaseAlt1, BaseRu, BaseAlt2]
-- p: [29, 28]
-  k: /
-  l: [Base, BaseAlt1, BaseRu, BaseAlt2]
-- p: [40, 41]
-  k: \
-  l: [Base, BaseAlt1, BaseRu, BaseAlt2]
-- p: [16, 17]
-  k: '|'
-  l: [Base, BaseAlt1, BaseRu, BaseAlt2]
-- p: [15, 14, 13]
-  k: '&layer_enalt'
-  l: [Base, BaseAlt1, BaseRu, BaseAlt2]
