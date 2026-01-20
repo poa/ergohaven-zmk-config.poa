@@ -66,7 +66,7 @@
 
         layer_en: layer_en {
             compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings = <&to MACRO_PLACEHOLDER &to_en>;
             label = "LAYER_EN";
             wait-ms = <0>;
@@ -498,6 +498,11 @@
 
         MediaRu {
             if-layers = <6 5>;
+            then-layer = <10>;
+        };
+
+        MediaNumFunc {
+            if-layers = <7 8>;
             then-layer = <10>;
         };
     };
