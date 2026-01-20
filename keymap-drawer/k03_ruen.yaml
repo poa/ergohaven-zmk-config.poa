@@ -241,7 +241,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: SymRu, h: '&m_la 5'}
+  - {t: Base, h: '&m_la'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Sym:
@@ -257,17 +257,17 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '~'
-  - '`'
-  - '['
+  - '&en TILDE'
+  - '&en GRAVE'
+  - '&en LBKT'
   - ']'
-  - ''''
+  - '&en SQT'
   - '"'
-  - '#'
-  - ^
-  - '{'
-  - '}'
-  - $
+  - '&en HASH'
+  - '&en CARET'
+  - '&en LBRC'
+  - '&en RBRC'
+  - '&en DOLLAR'
   - {t: ▽, type: trans}
   - '&ru RU_NUMERO'
   - {t: '!', h: LGUI}
@@ -282,76 +282,15 @@ layers:
   - {t: ;, h: RGUI}
   - '"'
   - {t: Sym, h: toggle}
-  - <
-  - '|'
-  - _
-  - '>'
-  - /
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '@'
-  - '&'
-  - ','
-  - .
-  - '?'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: \, h: Nav}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  SymRu:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&en TILDE'
-  - '&en GRAVE'
   - '&en LT'
-  - ;
-  - '&en LEFT_BRACKET'
-  - '%'
-  - '&en HASH'
-  - '&en CARET'
-  - '&en LBRC'
-  - '&en RBRC'
-  - '&en DOLLAR'
-  - {t: ▽, type: trans}
-  - NUMERO
-  - '!'
-  - '&en AT'
-  - '&en HASH'
-  - '&en DOLLAR'
-  - '-'
-  - KP MULTIPLY
-  - {t: '&m_press_key_twice LCTRL', h: sticky, s: '&m_release_key_twice LCTRL'}
-  - {t: '&m_press_key_twice LSHFT', h: sticky, s: '&m_release_key_twice LSHFT'}
-  - {t: '&m_press_key_twice LALT', h: sticky, s: '&m_release_key_twice LALT'}
-  - {t: '&m_press_key_twice LGUI', h: sticky, s: '&m_release_key_twice LGUI'}
-  - '"'
-  - {t: SymRu, h: toggle}
-  - '|'
-  - '&en AMPS'
-  - '*'
-  - /
+  - '&en PIPE'
   - _
+  - '&en GT'
+  - /
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&en AT'
-  - \
+  - '&en AMPS'
   - ','
   - .
   - '?'
@@ -684,9 +623,6 @@ combos:
 - p: [15, 16]
   k: '&layer_ru'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
-- p: [15, 14, 16]
-  k: '&layer_enalt'
-  l: [Base, BaseAlt1, BaseRu, BaseAlt2]
 - p: [12, 24]
   k: '`'
   l: [BaseRu]
