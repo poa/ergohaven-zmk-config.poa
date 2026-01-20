@@ -404,11 +404,11 @@ path.combo {
 </text>
 </g>
 <g class="combo combopos-2">
-<path d="M196,89 l-37,2" class="combo"/>
-<path d="M196,89 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">
-<tspan x="196" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="196" dy="1.2em" style="font-size: 78%">2</tspan>
+<path d="M140,93 l38,-6" class="combo"/>
+<path d="M140,93 l-38,8" class="combo"/>
+<rect rx="6" ry="6" x="126" y="80" width="28" height="26" class="combo"/>
+<text x="140" y="93" class="combo tap">
+<tspan x="140" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="140" dy="1.2em" style="font-size: 78%">2</tspan>
 </text>
 </g>
 <g class="combo combopos-3">
@@ -712,11 +712,11 @@ path.combo {
 </text>
 </g>
 <g class="combo combopos-2">
-<path d="M196,89 l-37,2" class="combo"/>
-<path d="M196,89 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">
-<tspan x="196" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="196" dy="1.2em" style="font-size: 78%">2</tspan>
+<path d="M140,93 l38,-6" class="combo"/>
+<path d="M140,93 l-38,8" class="combo"/>
+<rect rx="6" ry="6" x="126" y="80" width="28" height="26" class="combo"/>
+<text x="140" y="93" class="combo tap">
+<tspan x="140" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="140" dy="1.2em" style="font-size: 78%">2</tspan>
 </text>
 </g>
 <g class="combo combopos-3">
@@ -1021,11 +1021,11 @@ path.combo {
 </text>
 </g>
 <g class="combo combopos-2">
-<path d="M196,89 l-37,2" class="combo"/>
-<path d="M196,89 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">
-<tspan x="196" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="196" dy="1.2em" style="font-size: 78%">2</tspan>
+<path d="M140,93 l38,-6" class="combo"/>
+<path d="M140,93 l-38,8" class="combo"/>
+<rect rx="6" ry="6" x="126" y="80" width="28" height="26" class="combo"/>
+<text x="140" y="93" class="combo tap">
+<tspan x="140" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="140" dy="1.2em" style="font-size: 78%">2</tspan>
 </text>
 </g>
 <g class="combo combopos-3">
@@ -1385,11 +1385,11 @@ path.combo {
 </text>
 </g>
 <g class="combo combopos-2">
-<path d="M196,89 l-37,2" class="combo"/>
-<path d="M196,89 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">
-<tspan x="196" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="196" dy="1.2em" style="font-size: 78%">2</tspan>
+<path d="M140,93 l38,-6" class="combo"/>
+<path d="M140,93 l-38,8" class="combo"/>
+<rect rx="6" ry="6" x="126" y="80" width="28" height="26" class="combo"/>
+<text x="140" y="93" class="combo tap">
+<tspan x="140" dy="-0.6em" style="font-size: 78%">&amp;layer_en</tspan><tspan x="140" dy="1.2em" style="font-size: 78%">2</tspan>
 </text>
 </g>
 <g class="combo combopos-3">
@@ -1738,6 +1738,11 @@ path.combo {
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g class="combo combopos-0">
+<rect rx="6" ry="6" x="328" y="269" width="28" height="26" class="combo"/>
+<a href="#Media">
+<text x="342" y="282" class="combo tap layer-activator">Media</text>
+</a></g>
+<g class="combo combopos-1">
 <rect rx="6" ry="6" x="328" y="269" width="28" height="26" class="combo"/>
 <a href="#Media">
 <text x="342" y="282" class="combo tap layer-activator">Media</text>
@@ -3202,11 +3207,6 @@ path.combo {
 <tspan x="28" dy="-0.6em">BT</tspan><tspan x="28" dy="1.2em">…</tspan>
 </text>
 </g>
-<g class="combo combopos-1">
-<rect rx="6" ry="6" x="328" y="269" width="28" height="26" class="combo"/>
-<a href="#Media">
-<text x="342" y="282" class="combo tap layer-activator">Media</text>
-</a></g>
 </g>
 </g>
 </svg>

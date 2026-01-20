@@ -617,7 +617,7 @@ combos:
 - p: [15, 14, 16]
   k: '&layer_en 1'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
-- p: [15, 14, 16]
+- p: [15, 14, 13]
   k: '&layer_en 2'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
 - p: [15, 16]
@@ -658,3 +658,4 @@ combos:
   l: [Media]
 - p: [54, 53]
   k: Media
+  l: [Base, BaseAlt1, BaseAlt2, BaseRu, Sym, Sym, Nav, Num, Func, Mouse]
