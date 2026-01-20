@@ -137,41 +137,41 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Q
-  - W
-  - L
-  - D
-  - G
-  - K
-  - J
+  - Y
   - O
   - U
-  - '-'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: N, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: R, h: LSHFT}
-  - {t: T, h: LCTRL}
-  - P
-  - Y
-  - {t: H, h: RCTRL}
-  - {t: E, h: RSHFT}
-  - {t: I, h: RALT}
-  - {t: A, h: RGUI}
-  - ''''
-  - {t: ▽, type: trans}
-  - Z
+  - '='
   - X
-  - C
-  - V
+  - L
+  - D
+  - P
+  - Z
+  - {t: ▽, type: trans}
   - B
+  - {t: C, h: LGUI}
+  - {t: I, h: LALT}
+  - {t: A, h: LSHFT}
+  - {t: E, h: LCTRL}
+  - '-'
+  - K
+  - {t: H, h: RCTRL}
+  - {t: T, h: RSHFT}
+  - {t: N, h: RALT}
+  - {t: S, h: RGUI}
+  - W
+  - {t: ▽, type: trans}
+  - ''''
+  - ','
+  - .
+  - /
+  - ;
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - J
   - M
-  - ','
-  - .
-  - /
+  - G
+  - F
+  - V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -181,7 +181,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: Sym, h: '&m_la 4'}
-  - {t: ▽, type: trans}
+  - {t: R, h: RCTRL}
   - {t: ▽, type: trans}
   BaseRu:
   - {t: ▽, type: trans}
@@ -324,11 +324,11 @@ layers:
   - ;
   - '&en LEFT_BRACKET'
   - '%'
+  - '&en HASH'
   - '&en CARET'
-  - '&en RIGHT_BRACKET'
-  - ':'
-  - '&en GT'
-  - '&en SQT'
+  - '&en LBRC'
+  - '&en RBRC'
+  - '&en DOLLAR'
   - {t: ▽, type: trans}
   - NUMERO
   - '!'
@@ -336,7 +336,7 @@ layers:
   - '&en HASH'
   - '&en DOLLAR'
   - '-'
-  - +
+  - KP MULTIPLY
   - {t: '&m_press_key_twice LCTRL', h: sticky, s: '&m_release_key_twice LCTRL'}
   - {t: '&m_press_key_twice LSHFT', h: sticky, s: '&m_release_key_twice LSHFT'}
   - {t: '&m_press_key_twice LALT', h: sticky, s: '&m_release_key_twice LALT'}
@@ -350,7 +350,7 @@ layers:
   - _
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '='
+  - '&en AT'
   - \
   - ','
   - .
