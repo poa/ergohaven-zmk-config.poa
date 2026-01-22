@@ -241,7 +241,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Base, h: '&m_la'}
+  - {t: Sym, h: '&m_la 5'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Sym:

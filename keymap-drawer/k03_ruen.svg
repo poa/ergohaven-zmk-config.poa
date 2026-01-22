@@ -1362,9 +1362,9 @@ path.combo {
 </g>
 <g transform="translate(596, 266) rotate(-20.0)" class="key keypos-57">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<a href="#Base">
-<text x="0" y="0" class="key tap layer-activator">Base</text>
-</a><text x="0" y="24" class="key hold">&amp;m_la</text>
+<a href="#Sym">
+<text x="0" y="0" class="key tap layer-activator">Sym</text>
+</a><text x="0" y="24" class="key hold">&amp;m_la 5</text>
 </g>
 <g transform="translate(661, 252)" class="key trans keypos-58">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
