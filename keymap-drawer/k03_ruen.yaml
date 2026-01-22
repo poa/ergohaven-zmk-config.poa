@@ -197,41 +197,41 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - CYRILLIC SHORT I
-  - CYRILLIC TSE
-  - CYRILLIC U
-  - CYRILLIC KA
-  - CYRILLIC IE
-  - CYRILLIC EN
-  - CYRILLIC GHE
-  - CYRILLIC SHA
-  - CYRILLIC SHCHA
-  - CYRILLIC ZE
+  - SHORT I
+  - TSE
+  - U
+  - KA
+  - IE
+  - EN
+  - GHE
+  - SHA
+  - SHCHA
+  - ZE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: CYRILLIC ER, h: LGUI}
-  - {t: CYRILLIC YERU, h: LALT}
-  - {t: CYRILLIC VE, h: LSHFT}
-  - {t: CYRILLIC A, h: LCTRL}
-  - CYRILLIC PE
-  - CYRILLIC ER
-  - {t: CYRILLIC O, h: RCTRL}
-  - {t: CYRILLIC EL, h: RSHFT}
-  - {t: CYRILLIC DE, h: RALT}
-  - {t: CYRILLIC ZHE, h: RGUI}
-  - CYRILLIC E
+  - {t: ER, h: LGUI}
+  - {t: YERU, h: LALT}
+  - {t: VE, h: LSHFT}
+  - {t: A, h: LCTRL}
+  - PE
+  - ER
+  - {t: O, h: RCTRL}
+  - {t: EL, h: RSHFT}
+  - {t: DE, h: RALT}
+  - {t: ZHE, h: RGUI}
+  - E
   - {t: ▽, type: trans}
-  - CYRILLIC YA
-  - CYRILLIC CHE
-  - CYRILLIC ES
-  - CYRILLIC EM
-  - CYRILLIC I
+  - YA
+  - CHE
+  - ES
+  - EM
+  - I
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - CYRILLIC TE
-  - CYRILLIC SOFT SIGN
-  - CYRILLIC BE
-  - CYRILLIC YU
+  - TE
+  - SOFT SIGN
+  - BE
+  - YU
   - .
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -260,7 +260,7 @@ layers:
   - '&en TILDE'
   - '&en GRAVE'
   - '&en LBKT'
-  - ']'
+  - '&en RBKT'
   - '&en SQT'
   - '"'
   - '&en HASH'
@@ -273,7 +273,7 @@ layers:
   - {t: '!', h: LGUI}
   - {t: '=', h: LALT}
   - {t: '-', h: LSHFT}
-  - {t: KP PLUS, h: LCTRL}
+  - {t: +, h: LCTRL}
   - '*'
   - KP ASTERISK
   - {t: ':', h: RCTRL}
@@ -627,13 +627,13 @@ combos:
   k: '`'
   l: [BaseRu]
 - p: [47, 46]
-  k: CYRILLIC HARD SIGN
+  k: HARD SIGN
   l: [BaseRu]
 - p: [22, 34]
-  k: CYRILLIC HA
+  k: HA
   l: [BaseRu]
 - p: [23, 35]
-  k: CYRILLIC E
+  k: E
   l: [BaseRu]
 - p: [18, 19]
   k: '='

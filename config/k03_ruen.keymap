@@ -596,11 +596,11 @@
         Sym {
             display-name = "Sym";
             bindings = <
-&trans         &trans          &trans           &trans            &trans              &trans                       &trans           &trans            &trans           &trans          &trans          &trans
-&kp TILDE      &kp GRAVE       &kp LBKT         &kp RBKT          &kp SQT             &kp DQT                      &kp HASH         &kp CARET         &kp LBRC         &kp RBRC        &kp DOLLAR      &trans
-&ru RU_NUMERO  &mtl LGUI EXCL  &mtl LALT EQUAL  &mtl LSHFT MINUS  &mtl LCTRL KP_PLUS  &kp ASTRK                    &kp KP_ASTERISK  &mtr RCTRL COLON  &mtr RSHFT LPAR  &mtr RALT RPAR  &mtr RGUI SEMI  &kp DQT
-&tog 4         &kp LT          &kp PIPE         &kp UNDER         &kp GT              &kp SLASH  &trans    &trans  &kp AT           &kp AMPS          &kp COMMA        &kp DOT         &kp QMARK       &trans
-                               &kp PERCENT      &trans            &u_lt 6 BACKSLASH   &trans     &trans    &trans  &trans           &none             &trans           &trans
+&trans         &trans          &trans           &trans            &trans             &trans                       &trans           &trans            &trans           &trans          &trans          &trans
+&kp TILDE      &kp GRAVE       &kp LBKT         &kp RBKT          &kp SQT            &kp DQT                      &kp HASH         &kp CARET         &kp LBRC         &kp RBRC        &kp DOLLAR      &trans
+&ru RU_NUMERO  &mtl LGUI EXCL  &mtl LALT EQUAL  &mtl LSHFT MINUS  &mtl LCTRL PLUS    &kp ASTRK                    &kp KP_ASTERISK  &mtr RCTRL COLON  &mtr RSHFT LPAR  &mtr RALT RPAR  &mtr RGUI SEMI  &kp DQT
+&tog 4         &kp LT          &kp PIPE         &kp UNDER         &kp GT             &kp SLASH  &trans    &trans  &kp AT           &kp AMPS          &kp COMMA        &kp DOT         &kp QMARK       &trans
+                               &kp PERCENT      &trans            &u_lt 6 BACKSLASH  &trans     &trans    &trans  &trans           &none             &trans           &trans
             >;
         };
 
@@ -608,8 +608,8 @@
             display-name = "Sym";
             bindings = <
 &trans         &trans          &trans           &trans            &trans                &trans                          &trans           &trans               &trans           &trans          &trans             &trans
-&en TILDE      &en GRAVE       &en LBKT         &kp RBKT          &en SQT               &kp RU_DQT                      &en HASH         &en CARET            &en LBRC         &en RBRC        &en DOLLAR         &trans
-&ru RU_NUMERO  &mtl LGUI EXCL  &mtl LALT EQUAL  &mtl LSHFT MINUS  &mtl LCTRL KP_PLUS    &kp ASTRK                       &kp KP_ASTERISK  &mtr RCTRL RU_COLON  &mtr RSHFT LPAR  &mtr RALT RPAR  &mtr RGUI RU_SEMI  &kp RU_DQT
+&en TILDE      &en GRAVE       &en LBKT         &en RBKT          &en SQT               &kp RU_DQT                      &en HASH         &en CARET            &en LBRC         &en RBRC        &en DOLLAR         &trans
+&ru RU_NUMERO  &mtl LGUI EXCL  &mtl LALT EQUAL  &mtl LSHFT MINUS  &mtl LCTRL PLUS       &kp ASTRK                       &kp KP_ASTERISK  &mtr RCTRL RU_COLON  &mtr RSHFT LPAR  &mtr RALT RPAR  &mtr RGUI RU_SEMI  &kp RU_DQT
 &tog 4         &en LT          &en PIPE         &kp UNDER         &en GT                &kp RU_SLASH  &trans    &trans  &en AT           &en AMPS             &kp RU_COMMA     &kp RU_DOT      &kp RU_QMARK       &trans
                                &en PERCENT      &trans            &u_lt 6 RU_BACKSLASH  &trans        &trans    &trans  &trans           &none                &trans           &trans
             >;
