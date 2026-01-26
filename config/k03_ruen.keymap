@@ -241,7 +241,7 @@
             label = "u_mod_tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
 
@@ -249,7 +249,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
 
@@ -510,7 +510,7 @@
             display-name = "Base";
             bindings = <
 &kp GRAVE          &kp N1       &kp N2           &kp N3          &kp N4        &kp N5                                            &kp N6               &kp N7        &kp N8             &kp N9            &kp N0          &kp BSPC
-&kp TAB            &kp Q        &kp W            &kp E           &kp R         &kp T                                             &kp Y                &kp U         &kp I              &kp O             &kp P           &kp BACKSPACE
+&kp TAB            &kp Q        &kp W            &kp E           &kp R         &kp T                                             &kp Y                &kp U         &kp I              &kp O             &kp P           &kp MINUS
 &u_mt LCTRL ESC    &mtl LGUI A  &mtl LALT S      &mtl LSHFT D    &mtl LCTRL F  &kp G                                             &kp H                &mtr RCTRL J  &mtr RSHFT K       &mtr RALT L       &mtr RGUI SEMI  &kp SQT
 &mtsk LSHFT LSHFT  &kp Z        &kp X            &kp C           &kp V         &kp B          &kp C_MUTE       &kp C_PLAY_PAUSE  &kp N                &kp M         &kp COMMA          &kp DOT           &kp FSLH        &mtsk RSHFT RSHFT
                                 &mtsk LGUI LGUI  &u_mt LALT ESC  &m_la 6       &u_lt 7 SPACE  &u_lt 8 ENTER    &key_repeat       &mtsk RSHIFT RSHIFT  &lasl 4 4     &mtsk RCTRL RCTRL  &u_mt RGUI K_APP
@@ -529,7 +529,7 @@
             display-name = "BaseAltMMK";
             bindings = <
 &trans  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5                    &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &trans
-&trans  &kp Q        &kp W        &kp L         &kp D         &kp G                     &kp K   &kp J         &kp O         &kp U        &kp MINUS    &trans
+&trans  &kp Q        &kp W        &kp L         &kp D         &kp G                     &kp K   &kp J         &kp O         &kp U        &kp SEMI     &kp MINUS
 &trans  &mtl LGUI N  &mtl LALT S  &mtl LSHFT R  &mtl LCTRL T  &kp P                     &kp Y   &mtr RCTRL H  &mtr RSHFT E  &mtr RALT I  &mtr RGUI A  &kp SQT
 &trans  &kp Z        &kp X        &kp C         &kp V         &kp B   &trans    &trans  &kp J   &kp M         &kp COMMA     &kp DOT      &kp FSLH     &trans
                      &trans       &trans        &trans        &trans  &trans    &trans  &trans  &lasl 4 4     &trans        &trans
@@ -570,7 +570,7 @@
             display-name = "BaseRu";
             bindings = <
 &trans  &kp N1                    &kp N2                      &kp N3                     &kp N4                    &kp N5                                &kp N6              &kp N7                     &kp N8                     &kp N9                    &kp N0                     &trans
-&trans  &kp RU_CYRILLIC_SHORT_I   &kp RU_CYRILLIC_TSE         &kp RU_CYRILLIC_U          &kp RU_CYRILLIC_KA        &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA     &kp RU_CYRILLIC_ZE         &trans
+&trans  &kp RU_CYRILLIC_SHORT_I   &kp RU_CYRILLIC_TSE         &kp RU_CYRILLIC_U          &kp RU_CYRILLIC_KA        &kp RU_CYRILLIC_IE                    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA     &kp RU_CYRILLIC_ZE         &kp RU_CYRILLIC_HA
 &trans  &mtl LGUI RU_CYRILLIC_EF  &mtl LALT RU_CYRILLIC_YERU  &mtl LSHFT RU_CYRILLIC_VE  &mtl LCTRL RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                    &kp RU_CYRILLIC_ER  &mtr RCTRL RU_CYRILLIC_O   &mtr RSHFT RU_CYRILLIC_EL  &mtr RALT RU_CYRILLIC_DE  &mtr RGUI RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
 &trans  &kp RU_CYRILLIC_YA        &kp RU_CYRILLIC_CHE         &kp RU_CYRILLIC_ES         &kp RU_CYRILLIC_EM        &kp RU_CYRILLIC_I   &trans    &trans  &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE         &kp RU_CYRILLIC_YU        &kp RU_DOT                 &trans
                                   &trans                      &trans                     &trans                    &trans              &trans    &trans  &trans              &lasl 5 5                  &trans                     &trans
@@ -610,11 +610,11 @@
         Nav {
             display-name = "Nav";
             bindings = <
-&none   &none       &none         &none       &none          &none                           &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
-&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                      &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
-&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                       &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
-&tog 6  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
-                    &trans        &trans      &none          &trans      &trans      &trans  &kp SPACE   &mo 4     &trans    &trans
+&none   &none       &none         &none       &none          &none                             &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                        &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
+&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                         &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
+&tog 6  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans    &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
+                    &trans        &trans      &none          &trans      &trans      &kp BSPC  &kp SPACE   &mo 4     &trans    &trans
             >;
 
             sensor-bindings = <&enc_prevnext>;

@@ -24,7 +24,7 @@ layers:
   - I
   - O
   - P
-  - BACKSPACE
+  - '-'
   - {t: ESC, h: LCTRL}
   - {t: A, h: LGUI}
   - {t: S, h: LALT}
@@ -84,8 +84,8 @@ layers:
   - J
   - O
   - U
+  - ;
   - '-'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: N, h: LGUI}
   - {t: S, h: LALT}
@@ -207,7 +207,7 @@ layers:
   - CYRILLIC SHA
   - CYRILLIC SHCHA
   - CYRILLIC ZE
-  - {t: ▽, type: trans}
+  - CYRILLIC HA
   - {t: ▽, type: trans}
   - {t: CYRILLIC EF, h: LGUI}
   - {t: CYRILLIC YERU, h: LALT}
@@ -361,7 +361,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BSPC
   - SPACE
   - {t: Sym, type: held}
   - {t: ▽, type: trans}
