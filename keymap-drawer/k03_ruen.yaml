@@ -58,7 +58,7 @@ layers:
   - {t: ENTER, h: Func}
   - '&key_repeat'
   - {t: RSHIFT, h: RSHIFT}
-  - {t: Sym, h: '&m_la 4'}
+  - {t: Sym, h: Sym}
   - {t: RCTRL, h: RCTRL}
   - {t: APP, h: RGUI}
   BaseAlt1:
@@ -119,7 +119,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Sym, h: '&m_la 4'}
+  - {t: Sym, h: Sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   BaseAlt2:
@@ -180,7 +180,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Sym, h: '&m_la 4'}
+  - {t: Sym, h: Sym}
   - {t: R, h: RCTRL}
   - {t: ▽, type: trans}
   BaseRu:
@@ -241,7 +241,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Sym, h: '&m_la 5'}
+  - {t: Sym, h: Sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Sym:
