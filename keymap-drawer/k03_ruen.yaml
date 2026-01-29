@@ -429,17 +429,17 @@ layers:
   - KP DOT
   Func:
   - {t: ▽, type: trans}
-  - F2
+  - ''
   - Ctl+Sft+PRINTSCREEN
   - Sft+PRINTSCREEN
   - Alt+PRINTSCREEN
   - PRINTSCREEN
-  - F7
-  - F8
-  - F9
-  - F10
-  - F11
-  - F12
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - Alt+`
   - Ctl+Sft+`
   - ''
