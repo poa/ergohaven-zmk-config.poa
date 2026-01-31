@@ -55,7 +55,7 @@ layers:
   - {t: ESC, h: LALT}
   - '&m_la 6'
   - {t: SPACE, h: Num}
-  - {t: ENTER, h: Func}
+  - {t: BACKSPACE, h: Func}
   - '&key_repeat'
   - {t: RSHIFT, h: RSHIFT}
   - {t: Sym, h: Sym}
@@ -611,16 +611,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [15, 14]
+- p: [38, 39]
   k: '&layer_en'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
-- p: [15, 14, 16]
+- p: [38, 39, 40]
   k: '&layer_en 1'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
-- p: [14, 16]
+- p: [38, 40]
   k: '&layer_en 2'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
-- p: [15, 16]
+- p: [39, 40]
   k: '&layer_ru'
   l: [Base, BaseAlt1, BaseAlt2, BaseRu]
 - p: [17, 29]
