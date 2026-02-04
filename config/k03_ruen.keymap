@@ -198,7 +198,7 @@
             tap-ms = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp 0>,
+                <&kp F24>,
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -617,11 +617,11 @@
             label = "BaseAlt2";
             display-name = "BaseAlt2";
             bindings = <
-&trans  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5                       &kp N6  &kp N7        &kp N8         &kp N9       &kp N0       &trans
-&trans  &kp Q        &kp Y        &kp O         &kp U         &kp EQUAL                    &kp X   &kp L         &kp D          &kp P        &kp Z        &trans
-&kp B   &mtl LGUI C  &mtl LALT I  &mtl LSHFT A  &mtl LCTRL E  &kp MINUS                    &kp K   &mtr RCTRL H  &mtr RSHFT T   &mtr RALT N  &mtr RGUI S  &kp W
-&trans  &kp SQT      &kp COMMA    &kp DOT       &kp FSLH      &kp SEMI   &trans    &trans  &kp J   &kp M         &kp G          &kp F        &kp V        &trans
-                     &trans       &trans        &trans        &trans     &trans    &trans  &trans  &ltsl 4 4     &u_mt RCTRL R  &trans
+&trans  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5                       &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &trans
+&trans  &kp Q        &kp Y        &kp O         &kp U         &kp EQUAL                    &kp X   &kp L         &kp D         &kp P        &kp Z        &trans
+&kp B   &mtl LGUI C  &mtl LALT I  &mtl LSHFT A  &mtl LCTRL E  &kp MINUS                    &kp K   &mtr RCTRL H  &mtr RSHFT T  &mtr RALT N  &mtr RGUI S  &kp W
+&trans  &kp SQT      &kp COMMA    &kp DOT       &kp SEMI      &kp SLASH  &trans    &trans  &kp J   &kp M         &kp G         &kp F        &kp V        &trans
+                     &trans       &trans        &trans        &trans     &trans    &kp R   &trans  &ltsl 4 4     &key_repeat   &trans
             >;
 
             sensor-bindings =
@@ -679,8 +679,8 @@
             bindings = <
 &none   &none       &none         &none       &none          &none                             &kp F7      &kp F8    &kp F9    &kp F10          &kp F11          &kp F12
 &trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                        &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &trans
-&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                         &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
-&tog 6  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans    &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &trans
+&tog 9  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                         &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &trans
+&tog 6  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans    &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &tog 9
                     &trans        &trans      &none          &trans      &trans      &kp BSPC  &kp SPACE   &mo 4     &trans    &trans
             >;
 
@@ -712,11 +712,11 @@
         Mouse {
             display-name = "Mouse";
             bindings = <
-&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                           &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
-&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                       &none           &none           &none         &none            &none    &trans
-&trans  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &trans
-&tog 9  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    &trans
-                    &trans        &trans      &trans         &trans      &none     &mkp LCLK  &mkp RCLK       &mkp MCLK       &mkp MB4      &mkp MB5
+&kp F1  &kp F2      &kp F3        &kp F4      &kp F5         &kp F6                           &kp F7             &kp F8             &kp F9            &kp F10           &kp F11  &kp F12
+&trans  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                       &mmv MOVE_X(-500)  &mmv MOVE_Y(-300)  &mmv MOVE_Y(300)  &mmv MOVE_X(500)  &none    &trans
+&tog 9  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                        &mmv MOVE_LEFT     &mmv MOVE_DOWN     &mmv MOVE_UP      &mmv MOVE_RIGHT   &none    &trans
+&tog 9  &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &trans    &trans     &msc SCRL_LEFT     &msc SCRL_DOWN     &msc SCRL_UP      &msc SCRL_RIGHT   &none    &trans
+                    &trans        &trans      &trans         &trans      &trans    &mkp LCLK  &mkp RCLK          &mkp MCLK          &mkp MB4          &mkp MB5
             >;
         };
 

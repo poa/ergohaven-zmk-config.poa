@@ -163,8 +163,8 @@ layers:
   - ''''
   - ','
   - .
-  - /
   - ;
+  - /
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - J
@@ -178,10 +178,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - R
   - {t: ▽, type: trans}
   - {t: Sym, h: Sym}
-  - {t: R, h: RCTRL}
+  - '&key_repeat'
   - {t: ▽, type: trans}
   BaseRu:
   - {t: ▽, type: trans}
@@ -330,7 +330,7 @@ layers:
   - PG UP
   - PAUSE BREAK
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: Mouse, h: toggle}
   - {t: '&m_press_key_twice LGUI', h: sticky, s: '&m_release_key_twice LGUI'}
   - {t: '&m_press_key_twice LALT', h: sticky, s: '&m_release_key_twice LALT'}
   - {t: '&m_press_key_twice LSHFT', h: sticky, s: '&m_release_key_twice LSHFT'}
@@ -355,7 +355,7 @@ layers:
   - END
   - PG DN
   - SCROLLLOCK
-  - {t: ▽, type: trans}
+  - {t: Mouse, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -507,13 +507,13 @@ layers:
   - {t: '&m_hold_mod_press_key LGUI TAB', s: TAB}
   - Ctl+RIGHT
   - {t: '&m_hold_mod_press_key LCTRL TAB', s: TAB}
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&mmv MOVE_X(-500)'
+  - '&mmv MOVE_Y(-300)'
+  - '&mmv MOVE_Y(300)'
+  - '&mmv MOVE_X(500)'
   - ''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: Mouse, h: toggle}
   - {t: '&m_press_key_twice LGUI', h: sticky, s: '&m_release_key_twice LGUI'}
   - {t: '&m_press_key_twice LALT', h: sticky, s: '&m_release_key_twice LALT'}
   - {t: '&m_press_key_twice LSHFT', h: sticky, s: '&m_release_key_twice LSHFT'}
@@ -543,7 +543,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
+  - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp MCLK'
