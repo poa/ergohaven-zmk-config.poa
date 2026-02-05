@@ -712,11 +712,11 @@
         Nav {
             display-name = "Nav";
             bindings = <
-&kp GRAVE  &kp F1      &kp F2        &kp F3      &kp F4         &kp F5                          &kp F6      &kp F7    &kp F8    &kp F9           &kp F10          &kp F11
-&kp TAB    &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                      &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &kp F12
-&kp ESC    &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                       &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp LA(PRINTSCREEN)
-&tog 6     &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &tog 9
-                       &trans        &trans      &none          &trans      &trans      &trans  &kp SPACE   &mo 4     &trans    &trans
+&kp F12  &kp F1      &kp F2        &kp F3      &kp F4         &kp F5                          &kp F6      &kp F7    &kp F8    &kp F9           &kp F10          &kp F11
+&kp TAB  &swap_wins  &kp LC(LEFT)  &swap_desk  &kp LC(RIGHT)  &swap_tabs                      &caps_word  &kp INS   &kp HOME  &kp PG_UP        &kp PAUSE_BREAK  &kp BACKSPACE
+&kp ESC  &cm_lgui    &cm_lalt      &cm_lshft   &cm_lctrl      &kp ENTER                       &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp LA(PRINTSCREEN)
+&tog 6   &kp LC(Z)   &kp LC(X)     &kp LC(C)   &kp LC(V)      &kp LC(B)   &kp C_PP    &trans  &kp CAPS    &kp DEL   &kp END   &kp PG_DN        &kp SCROLLLOCK   &tog 9
+                     &trans        &trans      &none          &trans      &trans      &trans  &kp SPACE   &mo 4     &trans    &trans
             >;
 
             sensor-bindings = <&enc_prevnext>;

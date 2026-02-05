@@ -306,7 +306,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Nav:
-  - '`'
+  - F12
   - F1
   - F2
   - F3
@@ -329,7 +329,7 @@ layers:
   - HOME
   - PG UP
   - PAUSE BREAK
-  - F12
+  - BACKSPACE
   - ESC
   - {t: '&m_press_key_twice LGUI', h: sticky, s: '&m_release_key_twice LGUI'}
   - {t: '&m_press_key_twice LALT', h: sticky, s: '&m_release_key_twice LALT'}
