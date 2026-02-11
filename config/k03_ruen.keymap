@@ -769,7 +769,7 @@
         Media {
             display-name = "Media";
             bindings = <
-&mm_ss_bootldr  &trans        &kp LEFT      &kp RIGHT     &trans        &bootloader                             &none         &none         &none         &none         &none         &mm_ss_bootldr
+&mm_ss_bootldr  &kp F11       &kp LEFT      &kp RIGHT     &trans        &bootloader                             &none         &none         &none         &none         &none         &mm_ss_bootldr
 &mm_ss_bt_clr   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &mm_ss_bt_clr
 &tog 9          &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &out OUT_BLE                            &out OUT_BLE  &kp C_PREV    &kp C_PP      &kp C_NEXT    &trans        &trans
 &soft_off       &none         &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &out OUT_USB  &sys_reset    &sys_reset  &out OUT_USB  &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &trans        &studio_unlock
