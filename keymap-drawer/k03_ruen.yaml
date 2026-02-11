@@ -197,41 +197,41 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - SHORT I
-  - TSE
-  - U
-  - KA
-  - IE
-  - EN
-  - GHE
-  - SHA
-  - SHCHA
-  - ZE
+  - CYRILLIC SHORT I
+  - CYRILLIC TSE
+  - CYRILLIC U
+  - CYRILLIC KA
+  - CYRILLIC IE
+  - CYRILLIC EN
+  - CYRILLIC GHE
+  - CYRILLIC SHA
+  - CYRILLIC SHCHA
+  - CYRILLIC ZE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: EF, h: LGUI}
-  - {t: YERU, h: LALT}
-  - {t: VE, h: LSHFT}
-  - {t: A, h: LCTRL}
-  - PE
-  - ER
-  - {t: O, h: RCTRL}
-  - {t: EL, h: RSHFT}
-  - {t: DE, h: RALT}
-  - {t: ZHE, h: RGUI}
-  - E
+  - {t: CYRILLIC EF, h: LGUI}
+  - {t: CYRILLIC YERU, h: LALT}
+  - {t: CYRILLIC VE, h: LSHFT}
+  - {t: CYRILLIC A, h: LCTRL}
+  - CYRILLIC PE
+  - CYRILLIC ER
+  - {t: CYRILLIC O, h: RCTRL}
+  - {t: CYRILLIC EL, h: RSHFT}
+  - {t: CYRILLIC DE, h: RALT}
+  - {t: CYRILLIC ZHE, h: RGUI}
+  - CYRILLIC E
   - {t: ▽, type: trans}
-  - YA
-  - CHE
-  - ES
-  - EM
-  - I
+  - CYRILLIC YA
+  - CYRILLIC CHE
+  - CYRILLIC ES
+  - CYRILLIC EM
+  - CYRILLIC I
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - TE
-  - SOFT SIGN
-  - BE
-  - YU
+  - CYRILLIC TE
+  - CYRILLIC SOFT SIGN
+  - CYRILLIC BE
+  - CYRILLIC YU
   - .
   - {t: '&sl_enru 4', h: '&mo_enru 4'}
   - {t: ▽, type: trans}
@@ -239,7 +239,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: HA, h: LALT}
+  - {t: CYRILLIC HA, h: LALT}
   - {t: ▽, type: trans}
   - {t: SymRu, h: SymRu}
   - {t: ▽, type: trans}
@@ -329,7 +329,7 @@ layers:
   - '&en LBRC'
   - '&en RBRC'
   - '&en DOLLAR'
-  - HA
+  - CYRILLIC HA
   - '&ru RU_NUMERO'
   - {t: '!', h: LGUI}
   - {t: '=', h: LALT}
@@ -355,7 +355,7 @@ layers:
   - ','
   - .
   - '?'
-  - HARD SIGN
+  - CYRILLIC HARD SIGN
   - '&en PERCENT'
   - {t: ▽, type: trans}
   - {t: \, h: Num}
@@ -612,7 +612,7 @@ layers:
   - '&mkp MB5'
   Media:
   - {t: RSHFT, h: sticky, s: '&bootloader'}
-  - {t: ▽, type: trans}
+  - F11
   - LEFT
   - RIGHT
   - {t: ▽, type: trans}
@@ -688,10 +688,10 @@ combos:
   k: '`'
   l: [BaseRu]
 - p: [47, 46]
-  k: HARD SIGN
+  k: CYRILLIC HARD SIGN
   l: [BaseRu]
 - p: [21, 20]
-  k: HA
+  k: CYRILLIC HA
   l: [BaseRu]
 - p: [18, 19]
   k: '='

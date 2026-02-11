@@ -462,7 +462,7 @@
             tapping-term-ms = <280>;
             bindings = <&m_la>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             quick-tap-ms = <200>;
         };
     };
